@@ -251,25 +251,27 @@
 	</header>
 
 	<main>
-		<!-- Hero Section (Page 1: "We Open Source. And you?") -->
-		<section
-			class="relative hero-background text-white py-24 sm:py-32 overflow-hidden bg-indigo-700"
-		>
-			<!-- Dark overlay for text readability -->
-			<div class="absolute inset-0 bg-indigo-900/70 dark:bg-gray-950/70"></div>
-			<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-				<img
-					src="src/resources/ocp_logo.png"
-					alt="Open Collaboration Project Logo"
-					class="lg:h-[50vh] w-auto mx-auto mb-4"
-				/>
+	<!-- Hero Section (Page 1: "We Open Source. And you?") -->
+<section
+    class="relative hero-background text-white py-24 sm:py-32 overflow-hidden bg-indigo-700"
+>
+    <!-- Dark overlay for text readability -->
+    <div class="absolute inset-0 dark:bg-gray-950/70"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+        <img
+            src="src/resources/ocp_logo.png"
+            alt="Open Collaboration Project Logo"
+            class="lg:h-[50vh] w-auto mx-auto mb-4 select-none"
+            draggable="false"
+        />
 
-				<h1 class="text-6xl sm:text-6xl lg:text-5xl font-extrabold mb-6">
-					We ❤️ <span>Open Source</span>.
-				</h1>
-				<p class="text-3xl sm:text-4xl font-light mb-12">And you?</p>
-			</div>
-		</section>
+        <h1 class="text-6xl sm:text-6xl lg:text-5xl font-extrabold mb-6">
+            We ❤️ <span>Open Source</span>.
+        </h1>
+        <p class="text-3xl sm:text-4xl font-light mb-12">And you?</p>
+    </div>
+</section>
+
 
 		<!-- Mission & Project Summary Section (Page 1 content) -->
 		<section
@@ -277,26 +279,28 @@
 			class="py-16 sm:py-24 bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800"
 		>
 			<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-12 items-center">
-				<!-- Mission Text -->
-				<div class="order-2 md:order-1">
-					<h2 class="text-4xl font-extrabold text-gray-900 dark:text-white mb-4">Our Mission</h2>
-					<p class="text-xl text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
-						We support <strong class="text-indigo-600 dark:text-indigo-400"
-							>FOSS Projects in the Minecraft Ecosystem</strong
-						> to help them thrive. They're not just individual passion projects: many creators, multiplayer
-						servers, and players rely on them.
-					</p>
-					<p class="text-lg text-gray-500 dark:text-gray-400 mb-8">
-						We're here to assist: with the help of our commercial partners, we want to back projects
-						to secure long-term development.
-					</p>
-					<a
-						href="our_mission"
-						class="text-indigo-600 dark:text-indigo-400 font-semibold hover:text-indigo-700 dark:hover:text-indigo-300 transition duration-150"
-					>
-						Read more about Our Mission &rarr;
-					</a>
-				</div>
+			<!-- Mission Text -->
+<div class="order-2 md:order-1">
+    <h2 class="text-4xl font-extrabold text-gray-900 dark:text-white mb-4">Our Mission</h2>
+    <p class="text-xl text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
+        We support <strong class="text-indigo-600 dark:text-indigo-400">FOSS Projects in the Minecraft Ecosystem</strong> to help them thrive. They're not just individual passion projects: many creators, multiplayer
+        servers, and players rely on them.
+    </p>
+    <p class="text-lg text-gray-500 dark:text-gray-400 mb-8">
+        We're here to assist: with the help of our commercial partners, we want to back projects
+        to secure long-term development.
+    </p>
+    <a
+        href="our_mission"
+        class="inline-flex items-center px-6 py-3 border border-transparent text-base font-bold rounded-xl shadow-lg
+               bg-indigo-600 text-white
+               hover:bg-indigo-700 hover:shadow-xl
+               dark:bg-indigo-500 dark:hover:bg-indigo-600
+               transition duration-300 ease-in-out"
+    >
+        Read more about Our Mission &rarr;
+    </a>
+</div>
 
 				<!-- Project Metrics and Partners -->
 				<div
