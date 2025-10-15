@@ -215,58 +215,64 @@
         
         </main>
 
-    <footer class="bg-gray-800 dark:bg-gray-950 text-white py-12" id="contact">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
-                <div>
-                    <h4 class="text-lg font-semibold mb-4">Navigation</h4>
-                    <ul class="space-y-3 text-gray-400 text-sm">
-                        {#each navItems as item}
-                            <li>
-                                <a href={item.href} class="hover:text-indigo-400 transition duration-150"
-                                    >{item.name}</a
-                                >
-                            </li>
-                        {/each}
-                    </ul>
-                </div>
-
-                <div>
-                    <h4 class="text-lg font-semibold mb-4">Info</h4>
-                    <ul class="space-y-3 text-gray-400 text-sm">
-                        <li><a href="#" class="hover:text-indigo-400 transition duration-150">Our team</a></li>
-                        <li>
-                            <a
-                                href="https://ziax.com/terms/privacy-policy/"
-                                class="hover:text-indigo-400 transition duration-150">Privacy Policy</a
-                            >
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="col-span-2 md:col-span-2">
-                    <h4 class="text-lg font-semibold mb-4">Get in Touch</h4>
-                    <p class="text-gray-400 text-sm mb-4">
-                        Follow our social links to stay up to date with FOSS project announcements.
-                    </p>
-                    <div class="flex space-x-4">
-                        </div>
-                </div>
-            </div>
-
-            <div class="border-t border-gray-700 dark:border-gray-800 mt-10 pt-6 text-center">
-                <p class="text-sm text-gray-500">
-                    &copy; {new Date().getFullYear()} Open Collaboration. All rights reserved.
-                </p>
-                <p class="text-sm text-gray-500">
-                    This website is not an official Minecraft website and is not associated with Mojang
-                    Studios or Microsoft. All product and company names are trademarks or registered
-                    trademarks of their respective holders. Use of these names does not imply any affiliation
-                    or endorsement by them.
-                </p>
-            </div>
-        </div>
-    </footer>
+        <!-- Footer -->
+	<footer class="bg-gray-800 dark:bg-gray-950 text-white py-12" id="contact">
+		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+				<!-- Site Map Links -->
+				<div>
+					<h4 class="text-lg font-semibold mb-4">Navigation</h4>
+					<ul class="space-y-3 text-gray-400 text-sm">
+						{#each navItems as item}
+							<li>
+								<a href={item.href} class="hover:text-indigo-400 transition duration-150"
+									>{item.name}</a
+								>
+							</li>
+						{/each}
+					</ul>
+				</div>
+       
+				<!-- Legal/Info -->
+				<div>
+					<h4 class="text-lg font-semibold mb-4">Info</h4>
+					<ul class="space-y-3 text-gray-400 text-sm">
+						<li><a href="#" class="hover:text-indigo-400 transition duration-150">Our team</a></li>
+						<li>
+							<a
+								href="https://ziax.com/terms/privacy-policy/"
+								class="hover:text-indigo-400 transition duration-150">Privacy Policy</a
+							>
+						</li>
+					</ul>
+				</div>
+       
+				<!-- Contact/Social -->
+				<div class="col-span-2 md:col-span-2">
+					<h4 class="text-lg font-semibold mb-4">Get in Touch</h4>
+					<p class="text-gray-400 text-sm mb-4">
+						Follow our social links to stay up to date with FOSS project announcements.
+					</p>
+					<div class="flex space-x-4">
+						<!-- Social Links Placeholder -->
+						<!-- Add more social links (Twitter, Discord, etc.) -->
+					</div>
+				</div>
+			</div>
+       
+			<div class="border-t border-gray-700 dark:border-gray-800 mt-10 pt-6 text-center">
+				<p class="text-sm text-gray-500">
+					&copy; {new Date().getFullYear()} Open Collaboration. All rights reserved.
+				</p>
+				<p class="text-sm text-gray-500">
+					This website is not an official Minecraft website and is not associated with Mojang
+					Studios or Microsoft. All product and company names are trademarks or registered
+					trademarks of their respective holders. Use of these names does not imply any affiliation
+					or endorsement by them.
+				</p>
+			</div>
+		</div>
+	</footer>
 </div>
 
 <style>
