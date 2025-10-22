@@ -29,8 +29,8 @@
 		{ name: 'Our Mission', href: '/our_mission' },
 		{ name: 'Adopted Projects', href: '/adopted_projects' },
 		{ name: 'Offers', href: '#offers' },
-		{ name: 'Join us!', href: '#contact' },
-		{ name: 'Our Team', href: '/our_team' }
+		{ name: 'Our Team', href: '/our_team' },
+		{ name: 'Join us!', href: '#contact' }
 	];
 </script>
 
@@ -226,9 +226,11 @@
 				</p>
 				<p class="text-sm text-gray-500">
 					This website is not an official Minecraft website and is not associated with Mojang
-					Studios or Microsoft. All product and company names are trademarks or registered
-					trademarks of their respective holders. Use of these names does not imply any affiliation
-					or endorsement by them.
+					Studios or Microsoft.
+				</p>
+				<p class="text-sm text-gray-500">
+					All product and company names are trademarks or registered
+					trademarks of their respective holders.
 				</p>
 			</div>
 		</div>
