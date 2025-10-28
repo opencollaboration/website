@@ -214,4 +214,8 @@
 		background-position: center;
 		background-repeat: no-repeat;
 	}
+
+	:global(html.dark) .hero-background {
+		filter: brightness(0.6);
+	}
 </style>
