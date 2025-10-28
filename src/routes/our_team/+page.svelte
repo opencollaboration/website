@@ -47,17 +47,17 @@
     const teamMembers = [
         {
             name: 'Chris',
-            role: 'Project Lead', // From PDF Source 4
-            description: '"Hey! I\'m Chris. Some hal, Core iρηκα"', // From PDF Source 5-6
-            image: 'src/resources/team/chris_profile.png', // Placeholder for profile pic (Source 2)
-            hasImage: true, // Assuming this placeholder image will exist
+            role: 'Project Lead',
+            description: 'Leads the Open Collaboration Project with a focus on community-driven development and ensuring the success of all adopted open-source projects.',
+            image: 'src/resources/team/chris_profile.png',
+            hasImage: false, // Image doesn't exist yet
         },
         {
             name: 'Owen',
-            role: 'Infrastructure', // From PDF Source 8
-            description: 'Focuses on handling the core infrastructure and ensuring smooth operation of all supported projects.', // Synthesized description based on role
-            image: 'src/resources/team/owen_profile.png', // Placeholder for profile pic (Source 7)
-            hasImage: true, // Assuming this placeholder image will exist
+            role: 'Infrastructure',
+            description: 'Focuses on handling the core infrastructure and ensuring smooth operation of all supported projects. Manages the technical backbone that keeps our ecosystem running.',
+            image: 'src/resources/team/owen_profile.png',
+            hasImage: false, // Image doesn't exist yet
         }
     ];
 
@@ -166,8 +166,7 @@
                 </div>
 
                 <p class="text-center text-gray-600 dark:text-gray-400 mt-16 text-lg">
-                    This group of dedicated people is responsible for
-                    [cite_start]**handling infrastructure** [cite: 1][cite_start], **responding to e-mails** [cite: 1][cite_start], and **assisting adopted projects**[cite: 1].
+                    This group of dedicated people is responsible for <strong class="text-indigo-600 dark:text-indigo-400">handling infrastructure</strong>, <strong class="text-indigo-600 dark:text-indigo-400">responding to communications</strong>, and <strong class="text-indigo-600 dark:text-indigo-400">assisting adopted projects</strong>.
                 </p>
             </div>
         </section>
