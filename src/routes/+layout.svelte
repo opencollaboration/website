@@ -3,24 +3,9 @@
 	import favicon from '$lib/assets/ocp_icon.png';
 	import Header from '$lib/components/Header.svelte';
 	import Footer from '$lib/components/Footer.svelte';
-	import { theme, initializeTheme } from '$lib/stores/theme';
-	import { onMount } from 'svelte';
+	import { theme } from '$lib/stores/theme';
 
 	let { children } = $props();
-
-	// Initialize theme from localStorage on first load
-	onMount(() => {
-		initializeTheme();
-		
-		// Subscribe to theme changes to update DOM
-		const unsubscribe = theme.subscribe((t) => {
-			if (typeof document !== "undefined") {
-				document.documentElement.classList.remove("light", "dark");
-				document.documentElement.classList.add(t);
-			}
-		});
-		return unsubscribe;
-	});
 </script>
 
 <svelte:head>
