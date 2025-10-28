@@ -49,7 +49,7 @@
 <!-- Hero Section -->
 <section class="relative hero-background text-white py-24 sm:py-32 overflow-hidden bg-indigo-700">
 	<!-- Dark overlay for text readability -->
-	<div class="absolute inset-0 dark:bg-gray-950/70"></div>
+	<div class="absolute inset-0 bg-black/0 dark:bg-black/40"></div>
 	<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
 		<img
 			src="src/resources/ocp_logo.png"
@@ -93,8 +93,8 @@
 
 				<!-- Right column: two separate stacked boxes (metric card + CTA card) -->
 				<div class="flex flex-col gap-6">
-					<!-- Metric Card (non-clickable) -->
-					<div class="w-full p-6 sm:p-8 bg-indigo-50 dark:bg-indigo-950/50 rounded-2xl shadow-lg flex flex-col items-center text-center transform hover:scale-105 transition-transform duration-300">
+				<!-- Metric Card (non-clickable) -->
+				<div class="w-full p-6 sm:p-8 bg-indigo-50 dark:bg-gray-800 rounded-2xl shadow-lg flex flex-col items-center text-center transform hover:scale-105 transition-transform duration-300">
 						<p class="text-5xl sm:text-7xl font-extrabold text-indigo-700 dark:text-indigo-400 mb-1 leading-none">
 							35,000+
 						</p>
