@@ -1,33 +1,139 @@
-/* Force light mode as default, override @media(prefers-color-scheme: dark) */
-/* When .dark class is added, these selectors will apply */
+/* Dark mode overrides for Tailwind v4 @tailwindcss/vite */
+/* Since Tailwind generates dark styles only inside @media(prefers-color-scheme:dark) queries,
+   we override them here with .dark class-based selectors */
 
 html.dark {
   color-scheme: dark;
 }
 
-/* Backgrounds */
-html.dark .bg-gray-50 { @apply !bg-gray-900; }
-html.dark .bg-gray-100 { @apply !bg-gray-800; }
-html.dark .bg-white { @apply !bg-gray-800; }
-html.dark .bg-gray-800 { @apply !bg-gray-800; }
+/* === BACKGROUNDS === */
+html.dark .bg-gray-50 {
+  @apply !bg-gray-900;
+}
+html.dark .bg-gray-100 {
+  @apply !bg-gray-800;
+}
+html.dark .bg-gray-200 {
+  @apply !bg-gray-700;
+}
+html.dark .bg-white {
+  @apply !bg-gray-800;
+}
+html.dark .bg-gray-800 {
+  @apply !bg-gray-800;
+}
+html.dark .bg-gray-900 {
+  @apply !bg-gray-900;
+}
+html.dark .bg-indigo-50 {
+  @apply !bg-gray-900;
+}
+html.dark .bg-indigo-100 {
+  @apply !bg-gray-800;
+}
+html.dark .bg-indigo-600 {
+  @apply !bg-indigo-600;
+}
+html.dark .bg-indigo-700 {
+  @apply !bg-indigo-700;
+}
 
-/* Text colors */
-html.dark .text-gray-700 { @apply !text-gray-300; }
-html.dark .text-gray-600 { @apply !text-gray-400; }
-html.dark .text-gray-500 { @apply !text-gray-500; }
-html.dark .text-gray-400 { @apply !text-gray-600; }
-html.dark .text-gray-900 { @apply !text-white; }
-html.dark .text-white { @apply !text-white; }
+/* === TEXT COLORS === */
+html.dark .text-gray-400 {
+  @apply !text-gray-600;
+}
+html.dark .text-gray-500 {
+  @apply !text-gray-500;
+}
+html.dark .text-gray-600 {
+  @apply !text-gray-400;
+}
+html.dark .text-gray-700 {
+  @apply !text-gray-300;
+}
+html.dark .text-gray-900 {
+  @apply !text-white;
+}
+html.dark .text-white {
+  @apply !text-white;
+}
+html.dark .text-indigo-100 {
+  @apply !text-indigo-100;
+}
+html.dark .text-indigo-600 {
+  @apply !text-indigo-400;
+}
+html.dark .text-indigo-700 {
+  @apply !text-indigo-400;
+}
 
-/* Borders */
-html.dark .border-gray-200 { @apply !border-gray-800; }
-html.dark .border-gray-300 { @apply !border-gray-700; }
-html.dark .border-gray-700 { @apply !border-gray-300; }
+/* === BORDERS === */
+html.dark .border-gray-200 {
+  @apply !border-gray-800;
+}
+html.dark .border-gray-300 {
+  @apply !border-gray-700;
+}
+html.dark .border-gray-700 {
+  @apply !border-gray-300;
+}
+html.dark .border-indigo-500 {
+  @apply !border-indigo-500;
+}
+html.dark .border-indigo-600 {
+  @apply !border-indigo-600;
+}
 
-/* Interactive states */
-html.dark .hover\:bg-gray-100:hover { @apply !bg-gray-700; }
-html.dark .hover\:text-gray-700:hover { @apply !text-gray-300; }
-html.dark .hover\:text-indigo-600:hover { @apply !text-indigo-400; }
+/* === HOVER STATES === */
+html.dark .hover\:bg-gray-100:hover {
+  @apply !bg-gray-700;
+}
+html.dark .hover\:bg-indigo-700:hover {
+  @apply !bg-indigo-700;
+}
+html.dark .hover\:text-gray-700:hover {
+  @apply !text-gray-300;
+}
+html.dark .hover\:text-indigo-400:hover {
+  @apply !text-indigo-400;
+}
+html.dark .hover\:text-indigo-600:hover {
+  @apply !text-indigo-400;
+}
+html.dark .hover\:text-indigo-800:hover {
+  @apply !text-indigo-400;
+}
+html.dark .hover\:shadow-2xl:hover {
+  @apply !shadow-2xl;
+}
+html.dark .hover\:shadow-lg:hover {
+  @apply !shadow-lg;
+}
 
-/* Shadow backgrounds */
-html.dark .bg-gray-950\/70 { @apply !bg-gray-950/70; }
+/* === SHADOWS === */
+html.dark .shadow {
+  @apply !shadow;
+}
+html.dark .shadow-2xl {
+  @apply !shadow-2xl;
+}
+html.dark .shadow-lg {
+  @apply !shadow-lg;
+}
+html.dark .shadow-md {
+  @apply !shadow-md;
+}
+html.dark .shadow-xl {
+  @apply !shadow-xl;
+}
+
+/* === SPECIAL COLORS === */
+html.dark .bg-gray-950\/70 {
+  @apply !bg-black/70;
+}
+html.dark .bg-indigo-950\/50 {
+  @apply !bg-indigo-950/50;
+}
+html.dark .text-yellow-300 {
+  @apply !text-yellow-300;
+}
