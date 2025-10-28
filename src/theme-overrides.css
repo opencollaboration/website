@@ -1,0 +1,33 @@
+/* Force light mode as default, override @media(prefers-color-scheme: dark) */
+/* When .dark class is added, these selectors will apply */
+
+html.dark {
+  color-scheme: dark;
+}
+
+/* Backgrounds */
+html.dark .bg-gray-50 { @apply !bg-gray-900; }
+html.dark .bg-gray-100 { @apply !bg-gray-800; }
+html.dark .bg-white { @apply !bg-gray-800; }
+html.dark .bg-gray-800 { @apply !bg-gray-800; }
+
+/* Text colors */
+html.dark .text-gray-700 { @apply !text-gray-300; }
+html.dark .text-gray-600 { @apply !text-gray-400; }
+html.dark .text-gray-500 { @apply !text-gray-500; }
+html.dark .text-gray-400 { @apply !text-gray-600; }
+html.dark .text-gray-900 { @apply !text-white; }
+html.dark .text-white { @apply !text-white; }
+
+/* Borders */
+html.dark .border-gray-200 { @apply !border-gray-800; }
+html.dark .border-gray-300 { @apply !border-gray-700; }
+html.dark .border-gray-700 { @apply !border-gray-300; }
+
+/* Interactive states */
+html.dark .hover\:bg-gray-100:hover { @apply !bg-gray-700; }
+html.dark .hover\:text-gray-700:hover { @apply !text-gray-300; }
+html.dark .hover\:text-indigo-600:hover { @apply !text-indigo-400; }
+
+/* Shadow backgrounds */
+html.dark .bg-gray-950\/70 { @apply !bg-gray-950/70; }
