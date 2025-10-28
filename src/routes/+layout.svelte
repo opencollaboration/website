@@ -3,17 +3,21 @@
 	import favicon from '$lib/assets/ocp_icon.png';
 	import Header from '$lib/components/Header.svelte';
 	import Footer from '$lib/components/Footer.svelte';
-	import { theme } from '$lib/stores/theme';
+	import { theme, initializeTheme } from '$lib/stores/theme';
 	import { onMount } from 'svelte';
 
 	let { children } = $props();
 
-	// Initialize theme on page load
+	// Initialize theme from localStorage on first load
 	onMount(() => {
-		// Theme store will handle initialization
-		// Just make sure it's subscribed to updates
+		initializeTheme();
+		
+		// Subscribe to theme changes to update DOM
 		const unsubscribe = theme.subscribe((t) => {
-			// This will apply theme when it changes
+			if (typeof document !== "undefined") {
+				document.documentElement.classList.remove("light", "dark");
+				document.documentElement.classList.add(t);
+			}
 		});
 		return unsubscribe;
 	});
