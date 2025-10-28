@@ -19,13 +19,19 @@
 
 	let mobileMenuOpen = $state(false);
 
-	const toggleTheme = () => {
+	function toggleTheme() {
+		console.log('Toggle theme clicked, current:', $theme);
 		theme.toggle();
-	};
+		console.log('Theme after toggle:', $theme);
+	}
 
-	const toggleMobileMenu = () => {
+	function toggleMobileMenu() {
 		mobileMenuOpen = !mobileMenuOpen;
-	};
+	}
+
+	function handleNavClick() {
+		mobileMenuOpen = false;
+	}
 </script>
 
 <header class="sticky top-0 z-50 bg-white dark:bg-gray-800 shadow-md">
@@ -57,7 +63,7 @@
 
 				<!-- Theme Toggle Button (Desktop) -->
 				<button
-					on:click={toggleTheme}
+					onclick={toggleTheme}
 					aria-label={$theme === 'light' ? 'Switch to dark mode' : 'Switch to light mode'}
 					class="p-2 rounded-full text-gray-700 dark:text-yellow-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition duration-300 focus:outline-none focus:ring-2 focus:ring-indigo-500"
 				>
@@ -73,7 +79,7 @@
 			<div class="md:hidden flex items-center space-x-2">
 				<!-- Theme Toggle Button for Mobile -->
 				<button
-					on:click={toggleTheme}
+					onclick={toggleTheme}
 					aria-label={$theme === 'light' ? 'Switch to dark mode' : 'Switch to light mode'}
 					class="p-2 rounded-full text-gray-700 dark:text-yellow-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition duration-300 focus:outline-none focus:ring-2 focus:ring-indigo-500"
 				>
@@ -85,7 +91,7 @@
 				</button>
 				<!-- Hamburger Button -->
 				<button
-					on:click={toggleMobileMenu}
+					onclick={toggleMobileMenu}
 					aria-label="Toggle navigation menu"
 					aria-expanded={mobileMenuOpen}
 					class="p-2 rounded-lg text-gray-500 dark:text-gray-300 hover:text-gray-700 dark:hover:text-white focus:outline-none focus:ring-2 focus:ring-indigo-500"
@@ -101,7 +107,7 @@
 				{#each navItems as item}
 					<a
 						href={item.href}
-						on:click={() => (mobileMenuOpen = false)}
+						onclick={handleNavClick}
 						class="block px-4 py-3 text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 hover:bg-gray-100 dark:hover:bg-gray-700 rounded transition duration-150"
 					>
 						{item.name}

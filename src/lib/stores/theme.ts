@@ -3,54 +3,71 @@ import { writable } from "svelte/store";
 export type Theme = "light" | "dark";
 
 function createThemeStore() {
-  // Initialize with a default value
-  const { subscribe, set } = writable<Theme>("light");
+  const baseStore = writable<Theme>("light");
 
-  let currentTheme: Theme = "light";
-  subscribe((t) => {
-    currentTheme = t;
-  });
-
-  // Apply theme to DOM
+  // Apply theme to DOM immediately
   function applyTheme(theme: Theme) {
     if (typeof document === "undefined") return;
 
-    document.documentElement.classList.remove("light", "dark");
-    document.documentElement.classList.add(theme);
+    const html = document.documentElement;
+    html.classList.remove("light", "dark");
+    html.classList.add(theme);
+    html.style.colorScheme = theme;
+
+    console.log("Applied theme:", theme);
   }
 
-  // Load from localStorage and apply
-  function loadTheme() {
-    if (typeof window === "undefined" || typeof localStorage === "undefined")
-      return;
+  // Get the theme preference from localStorage or system
+  function getThemePreference(): Theme {
+    if (typeof localStorage === "undefined") return "light";
 
-    const saved = localStorage.getItem("theme") as Theme | null;
-    const themeToUse = saved || "light";
+    const saved = localStorage.getItem("theme");
+    if (saved === "light" || saved === "dark") {
+      return saved;
+    }
 
-    set(themeToUse);
-    applyTheme(themeToUse);
+    if (typeof window !== "undefined" && window.matchMedia) {
+      if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+        return "dark";
+      }
+    }
+
+    return "light";
   }
 
   return {
-    subscribe,
-    toggle: () => {
-      const next = currentTheme === "light" ? "dark" : "light";
-      set(next);
-      applyTheme(next);
+    subscribe: baseStore.subscribe,
 
-      if (typeof localStorage !== "undefined") {
-        localStorage.setItem("theme", next);
-      }
+    toggle() {
+      baseStore.update((current) => {
+        const next = current === "light" ? "dark" : "light";
+        applyTheme(next);
+
+        if (typeof localStorage !== "undefined") {
+          localStorage.setItem("theme", next);
+        }
+
+        console.log("Theme toggled to:", next);
+        return next;
+      });
     },
-    set: (theme: Theme) => {
-      set(theme);
+
+    set(theme: Theme) {
+      baseStore.set(theme);
       applyTheme(theme);
 
       if (typeof localStorage !== "undefined") {
         localStorage.setItem("theme", theme);
       }
     },
-    init: loadTheme,
+
+    initialize() {
+      if (typeof window === "undefined") return;
+
+      const pref = getThemePreference();
+      baseStore.set(pref);
+      applyTheme(pref);
+    },
   };
 }
 
