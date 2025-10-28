@@ -1,9 +1,7 @@
 <!-- Hero -->
-<section class="relative hero-background text-white py-20 sm:py-32 overflow-hidden">
-	<!-- Dark overlay for readability -->
-	<div class="absolute inset-0 dark:bg-gray-950/70"></div>
-	<div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-		<h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-6">Our Mission</h1>
+<section class="py-16 sm:py-24 bg-indigo-600 dark:bg-indigo-900">
+	<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+		<h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white mb-6">Our Mission</h1>
 		<p class="text-lg sm:text-xl lg:text-2xl text-indigo-100 dark:text-indigo-300">
 			Supporting creators with open tools, sustained by collaboration.
 		</p>
