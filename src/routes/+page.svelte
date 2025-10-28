@@ -48,7 +48,8 @@
 
 <!-- Hero Section -->
 <section class="relative hero-background text-white py-24 sm:py-32 overflow-hidden bg-indigo-700">
-undefined
+	<!-- Dark overlay for text readability -->
+	<div class="absolute inset-0 bg-black/0 dark:bg-black/60"></div>
 	<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
 		<img
 			src="src/resources/ocp_logo.png"
@@ -212,5 +213,24 @@ undefined
 		background-size: cover;
 		background-position: center;
 		background-repeat: no-repeat;
+		position: relative;
+	}
+
+	.hero-background::before {
+		content: '';
+		position: absolute;
+		inset: 0;
+		background-image: url('src/resources/upbg3.png');
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
+		opacity: 0;
+		z-index: 1;
+		pointer-events: none;
+	}
+
+	:global(html.dark) .hero-background::before {
+		opacity: 1;
+		filter: brightness(0.5);
 	}
 </style>
