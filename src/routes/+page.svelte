@@ -59,10 +59,10 @@
 			style="outline: none; border: none;"
 		/>
 
-		<h1 class="text-5xl sm:text-6xl lg:text-5xl font-extrabold mb-6">
+		<h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-6">
 			Building Minecraft <span>Open Source Software</span>.
 		</h1>
-		<p class="text-2xl sm:text-4xl font-light mb-12">Together with you?</p>
+		<p class="text-xl sm:text-2xl lg:text-4xl font-light mb-12">Together with you?</p>
 	</div>
 </section>
 
