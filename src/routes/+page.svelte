@@ -48,8 +48,7 @@
 
 <!-- Hero Section -->
 <section class="relative hero-background text-white py-24 sm:py-32 overflow-hidden bg-indigo-700">
-	<!-- Dark overlay for text readability -->
-	<div class="absolute inset-0 bg-black/0 dark:bg-black/40"></div>
+undefined
 	<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
 		<img
 			src="src/resources/ocp_logo.png"
@@ -213,9 +212,5 @@
 		background-size: cover;
 		background-position: center;
 		background-repeat: no-repeat;
-	}
-
-	:global(html.dark) .hero-background {
-		filter: brightness(0.6);
 	}
 </style>
