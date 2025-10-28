@@ -51,9 +51,9 @@
     ];
 
     const partners = [
-        {name: 'Ziax', logo: '/src/resources/partnericons/ziax_logo.svg'},
-        {name: 'Waypoint Studios', logo: '/logos/waypoint.png'},
-        {name: 'Mineville', logo: '/logos/mineville.png'}
+        {name: 'Ziax', logo: '/src/resources/partnericons/ziax_logo.svg', description: 'Leading infrastructure and development partner'},
+        {name: 'Waypoint Studios', logo: '/logos/waypoint.png', description: 'Creative studio supporting FOSS initiatives'},
+        {name: 'Mineville', logo: '/logos/mineville.png', description: 'Community-focused partner in Minecraft ecosystem'}
     ];
 
     let partnersWithStatus = [];
@@ -261,8 +261,9 @@
                 <img
                         src="src/resources/ocp_logo.png"
                         alt="Open Collaboration Project Logo"
-                        class="lg:h-[50vh] w-auto mx-auto mb-4 select-none"
+                        class="lg:h-[50vh] w-auto mx-auto mb-4 select-none outline-none"
                         draggable="false"
+                        style="outline: none; border: none;"
                 />
 
                 <h1 class="text-6xl sm:text-6xl lg:text-5xl font-extrabold mb-6">
@@ -348,81 +349,70 @@
         </section>
 
         <!-- Carousel Section -->
-        <section
-                class="py-10 bg-gray-50 dark:bg-gray-900 border-b border-gray-200 dark:border-gray-700 overflow-hidden"
-        >
-            <div class="max-w-7xl mx-auto px-0 sm:px-6 lg:px-8">
-                <h3
-                        class="text-center text-xl font-semibold uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-6"
-                >
-                    Backed by our Partners
-                </h3>
+         <section
+                 class="py-16 sm:py-24 bg-gray-50 dark:bg-gray-900 border-b border-gray-200 dark:border-gray-700 overflow-hidden"
+         >
+             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                 <div class="text-center mb-12">
+                     <h3
+                             class="text-center text-3xl font-extrabold tracking-wider text-gray-900 dark:text-white mb-4"
+                     >
+                         Backed by our Partners
+                     </h3>
+                     <p class="text-gray-600 dark:text-gray-400 text-lg max-w-2xl mx-auto">
+                         We collaborate with leading organizations to support and sustain free and open-source software in the Minecraft ecosystem.
+                     </p>
+                 </div>
 
-                <div class="relative w-full overflow-hidden">
-                    <div class="flex flex-nowrap animate-scroll">
-                        {#each partnersWithStatus as partner}
-                            <div class="flex-shrink-0 px-4 sm:px-6 flex justify-center items-center">
-                                <div
-                                        class="w-40 h-16 sm:w-52 sm:h-20 flex items-center justify-center
-                         p-3 rounded-xl shadow-md transition duration-300
-                         border border-indigo-200 dark:border-indigo-700
-                         bg-pink-200
-                         hover:bg-pink-200 dark:hover:bg-indigo-300"
-                                >
-                                    {#if partner.hasImage}
-                                        <img
-                                                src={partner.logo}
-                                                alt={partner.name}
-                                                class="max-h-full max-w-full object-contain partner-image"
-                                                loading="lazy"
-                                        />
-                                    {:else}
-										<span
-                                                class="text-indigo-700 dark:text-indigo-500 font-bold uppercase tracking-wide"
-                                        >
-											{partner.name}
-										</span>
-                                    {/if}
-                                </div>
-                            </div>
-                        {/each}
-                    </div>
-                </div>
-            </div>
-        </section>
+                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                     {#each partners as partner}
+                         <div
+                                 class="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-lg hover:shadow-2xl transition duration-300 flex flex-col items-center text-center transform hover:scale-105"
+                         >
+                             <div class="mb-6 h-32 w-full flex items-center justify-center">
+                                 {#if partner.hasImage}
+                                     <img
+                                             src={partner.logo}
+                                             alt={partner.name}
+                                             class="max-h-full max-w-full object-contain"
+                                             loading="lazy"
+                                             style="outline: none; border: none;"
+                                     />
+                                 {:else}
+                                     <span
+                                             class="text-indigo-700 dark:text-indigo-500 font-bold text-2xl uppercase tracking-wide"
+                                     >
+                                         {partner.name}
+                                     </span>
+                                 {/if}
+                             </div>
+                             <h4 class="text-xl font-bold text-gray-900 dark:text-white mb-3">{partner.name}</h4>
+                             <p class="text-gray-600 dark:text-gray-300 text-sm">{partner.description}</p>
+                         </div>
+                     {/each}
+                 </div>
+             </div>
+         </section>
 
-        <style>
-            @keyframes scroll {
-                0% {
-                    transform: translateX(0);
-                }
-                100% {
-                    transform: translateX(-50%);
-                }
-            }
 
-            .animate-scroll {
-                animation: scroll 20s linear infinite;
-            }
-        </style>
 
-        <!-- Offer/CTA Section (Page 2 content) -->
-        <section id="offers" class="py-16 sm:py-24 bg-indigo-700 dark:bg-indigo-950">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                <h2 class="text-4xl font-extrabold text-white mb-6">Get Involved!</h2>
+         <!-- Offer/CTA Section (Page 2 content) -->
+         <section id="offers" class="py-16 sm:py-24 bg-gray-100 dark:bg-gray-800">
+             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                 <h2 class="text-4xl font-extrabold text-gray-900 dark:text-white mb-6">Get Involved!</h2>
 
                 <div class="grid md:grid-cols-2 gap-8 mt-10">
                     <!-- Commercial Partners CTA -->
                     <div
-                            class="p-8 bg-indigo-600 dark:bg-indigo-800 rounded-xl shadow-2xl transition duration-300 hover:scale-[1.02]"
+                            class="p-8 bg-white dark:bg-gray-800 rounded-xl shadow-2xl transition duration-300 hover:scale-[1.02] border-l-4 border-indigo-600"
                     >
-                        <h3 class="text-3xl font-bold text-yellow-300 mb-4">Commercial Partners</h3>
-                        <p class="text-indigo-200 dark:text-indigo-300 mb-6">
+                        <h3 class="text-3xl font-bold text-indigo-700 dark:text-indigo-400 mb-4">Commercial Partners</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-6">
                             Explore partnership opportunities and what we can offer your business.
                         </p>
                         <a
                                 href="#commercial-partners"
-                                class="inline-flex items-center space-x-2 text-white font-semibold hover:text-yellow-300 transition duration-150"
+                                class="inline-flex items-center space-x-2 text-indigo-600 dark:text-indigo-400 font-semibold hover:text-indigo-800 dark:hover:text-indigo-300 transition duration-150"
                         >
                             <span>Our Offer</span>
                             <svg
@@ -444,15 +434,15 @@
 
                     <!-- Contributors and Maintainers CTA -->
                     <div
-                            class="p-8 bg-indigo-600 dark:bg-indigo-800 rounded-xl shadow-2xl transition duration-300 hover:scale-[1.02]"
+                            class="p-8 bg-white dark:bg-gray-800 rounded-xl shadow-2xl transition duration-300 hover:scale-[1.02] border-l-4 border-indigo-600"
                     >
-                        <h3 class="text-3xl font-bold text-yellow-300 mb-4">Contributors & Maintainers</h3>
-                        <p class="text-indigo-200 dark:text-indigo-300 mb-6">
+                        <h3 class="text-3xl font-bold text-indigo-700 dark:text-indigo-400 mb-4">Contributors & Maintainers</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-6">
                             Find out how we support projects and how you can benefit.
                         </p>
                         <a
                                 href="#maintainers"
-                                class="inline-flex items-center space-x-2 text-white font-semibold hover:text-yellow-300 transition duration-150"
+                                class="inline-flex items-center space-x-2 text-indigo-600 dark:text-indigo-400 font-semibold hover:text-indigo-800 dark:hover:text-indigo-300 transition duration-150"
                         >
                             <span>See what we can do</span>
                             <svg
