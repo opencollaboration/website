@@ -1,9 +1,8 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
-	import { writable, type Writable } from 'svelte/store';
 	import IconSun from './IconSun.svelte';
 	import IconMoon from './IconMoon.svelte';
 	import IconHamburger from './IconHamburger.svelte';
+	import { theme } from '$lib/stores/theme';
 
 	interface NavItem {
 		name: string;
@@ -18,34 +17,10 @@
 		{ name: 'Join us!', href: '#contact' }
 	];
 
-	const theme: Writable<'light' | 'dark'> = writable('light');
 	let mobileMenuOpen = $state(false);
 
-	const applyTheme = (currentTheme: 'light' | 'dark') => {
-		document.documentElement.classList.remove('light', 'dark');
-		document.documentElement.classList.add(currentTheme);
-		document.documentElement.setAttribute('data-theme', currentTheme);
-	};
-
-	onMount(() => {
-		const storedTheme = localStorage.getItem('theme') as 'light' | 'dark' | null;
-		if (storedTheme) {
-			theme.set(storedTheme);
-			applyTheme(storedTheme);
-		} else {
-			applyTheme('light');
-		}
-
-		theme.subscribe(applyTheme);
-	});
-
 	const toggleTheme = () => {
-		theme.update((current) => {
-			const newTheme = current === 'light' ? 'dark' : 'light';
-			localStorage.setItem('theme', newTheme);
-			applyTheme(newTheme);
-			return newTheme;
-		});
+		theme.update((current) => (current === 'light' ? 'dark' : 'light'));
 	};
 
 	const toggleMobileMenu = () => {
