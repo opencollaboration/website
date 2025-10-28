@@ -97,12 +97,12 @@
 
 		<!-- Mobile Menu -->
 		{#if mobileMenuOpen}
-			<nav class="md:hidden pb-4 space-y-2">
+			<nav class="md:hidden pb-4 space-y-1">
 				{#each navItems as item}
 					<a
 						href={item.href}
 						on:click={() => (mobileMenuOpen = false)}
-						class="block px-4 py-2 text-gray-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 hover:bg-gray-100 dark:hover:bg-gray-700 rounded transition duration-150"
+						class="block px-4 py-3 text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 hover:bg-gray-100 dark:hover:bg-gray-700 rounded transition duration-150"
 					>
 						{item.name}
 					</a>
