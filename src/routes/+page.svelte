@@ -94,7 +94,7 @@
 				<!-- Right column: two separate stacked boxes (metric card + CTA card) -->
 				<div class="flex flex-col gap-6">
 				<!-- Metric Card (non-clickable) -->
-				<div class="w-full p-6 sm:p-8 bg-indigo-50 dark:bg-gray-800 rounded-2xl shadow-lg flex flex-col items-center text-center transform hover:scale-105 transition-transform duration-300">
+				<div class="w-full p-6 sm:p-8 bg-indigo-50 dark:bg-gray-950 rounded-2xl shadow-lg flex flex-col items-center text-center transform hover:scale-105 transition-transform duration-300">
 						<p class="text-5xl sm:text-7xl font-extrabold text-indigo-700 dark:text-indigo-400 mb-1 leading-none">
 							35,000+
 						</p>
