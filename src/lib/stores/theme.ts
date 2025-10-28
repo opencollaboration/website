@@ -3,6 +3,7 @@ import { writable } from "svelte/store";
 export type Theme = "light" | "dark";
 
 function createThemeStore() {
+  // Initialize to "light", but will be synced in initialize()
   const baseStore = writable<Theme>("light");
 
   // Apply theme to DOM immediately
@@ -15,6 +16,16 @@ function createThemeStore() {
     html.style.colorScheme = theme;
 
     console.log("Applied theme:", theme);
+  }
+
+  // Get the CURRENT theme from the DOM (set by HTML script or manually)
+  function getCurrentThemeFromDOM(): Theme {
+    if (typeof document === "undefined") return "light";
+
+    if (document.documentElement.classList.contains("dark")) {
+      return "dark";
+    }
+    return "light";
   }
 
   // Get the theme preference from localStorage or system
@@ -40,14 +51,16 @@ function createThemeStore() {
 
     toggle() {
       baseStore.update((current) => {
-        const next = current === "light" ? "dark" : "light";
+        // Always check the DOM for the actual current state
+        const actualCurrent = getCurrentThemeFromDOM();
+        const next = actualCurrent === "light" ? "dark" : "light";
         applyTheme(next);
 
         if (typeof localStorage !== "undefined") {
           localStorage.setItem("theme", next);
         }
 
-        console.log("Theme toggled to:", next);
+        console.log("Theme toggled from", actualCurrent, "to:", next);
         return next;
       });
     },
@@ -64,9 +77,11 @@ function createThemeStore() {
     initialize() {
       if (typeof window === "undefined") return;
 
-      const pref = getThemePreference();
-      baseStore.set(pref);
-      applyTheme(pref);
+      // Sync with what the HTML script already set up
+      const actualTheme = getCurrentThemeFromDOM();
+      baseStore.set(actualTheme);
+
+      console.log("Theme store initialized to:", actualTheme);
     },
   };
 }
