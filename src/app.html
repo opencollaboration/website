@@ -1,11 +1,36 @@
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		%sveltekit.head%
-	</head>
-	<body data-sveltekit-preload-data="hover">
-		<div style="display: contents">%sveltekit.body%</div>
-	</body>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    %sveltekit.head%
+    <script>
+      // Initialize theme before rendering to prevent flash
+      (function () {
+        let theme = localStorage.getItem("theme");
+
+        if (!theme) {
+          // Check system preference if no saved theme
+          if (
+            window.matchMedia &&
+            window.matchMedia("(prefers-color-scheme: dark)").matches
+          ) {
+            theme = "dark";
+          } else {
+            theme = "light";
+          }
+        }
+
+        document.documentElement.classList.remove("light", "dark");
+        document.documentElement.classList.add(theme);
+        document.documentElement.style.colorScheme = theme;
+        document.documentElement.setAttribute("data-theme", theme);
+
+        console.log("[Theme] Initialized with:", theme);
+      })();
+    </script>
+  </head>
+  <body data-sveltekit-preload-data="hover">
+    <div style="display: contents">%sveltekit.body%</div>
+  </body>
 </html>
