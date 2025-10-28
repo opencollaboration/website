@@ -20,7 +20,7 @@
 	let mobileMenuOpen = $state(false);
 
 	const toggleTheme = () => {
-		theme.update((current) => (current === 'light' ? 'dark' : 'light'));
+		theme.toggle();
 	};
 
 	const toggleMobileMenu = () => {
