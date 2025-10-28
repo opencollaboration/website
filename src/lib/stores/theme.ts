@@ -1,49 +1,56 @@
-import { writable, type Writable } from "svelte/store";
+import { writable } from "svelte/store";
 
 export type Theme = "light" | "dark";
 
-function createThemeStore(): Writable<Theme> {
-  // Create the store
-  const { subscribe, set, update } = writable<Theme>("light");
+function createThemeStore() {
+  // Initialize with a default value
+  const { subscribe, set } = writable<Theme>("light");
 
-  // Load theme on mount
-  if (typeof window !== "undefined") {
-    const stored = localStorage.getItem("theme") as Theme | null;
-    if (stored) {
-      set(stored);
-      applyTheme(stored);
-    } else {
-      applyTheme("light");
-    }
+  let currentTheme: Theme = "light";
+  subscribe((t) => {
+    currentTheme = t;
+  });
+
+  // Apply theme to DOM
+  function applyTheme(theme: Theme) {
+    if (typeof document === "undefined") return;
+
+    document.documentElement.classList.remove("light", "dark");
+    document.documentElement.classList.add(theme);
   }
 
-  function applyTheme(theme: Theme) {
-    if (typeof document !== "undefined") {
-      document.documentElement.classList.remove("light", "dark");
-      document.documentElement.classList.add(theme);
-      document.documentElement.setAttribute("data-theme", theme);
-    }
+  // Load from localStorage and apply
+  function loadTheme() {
+    if (typeof window === "undefined" || typeof localStorage === "undefined")
+      return;
+
+    const saved = localStorage.getItem("theme") as Theme | null;
+    const themeToUse = saved || "light";
+
+    set(themeToUse);
+    applyTheme(themeToUse);
   }
 
   return {
     subscribe,
+    toggle: () => {
+      const next = currentTheme === "light" ? "dark" : "light";
+      set(next);
+      applyTheme(next);
+
+      if (typeof localStorage !== "undefined") {
+        localStorage.setItem("theme", next);
+      }
+    },
     set: (theme: Theme) => {
+      set(theme);
       applyTheme(theme);
+
       if (typeof localStorage !== "undefined") {
         localStorage.setItem("theme", theme);
       }
-      set(theme);
     },
-    update: (fn: (theme: Theme) => Theme) => {
-      update((current) => {
-        const next = fn(current);
-        applyTheme(next);
-        if (typeof localStorage !== "undefined") {
-          localStorage.setItem("theme", next);
-        }
-        return next;
-      });
-    },
+    init: loadTheme,
   };
 }
 
