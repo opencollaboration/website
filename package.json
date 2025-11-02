@@ -29,6 +29,8 @@
 		"vite": "^7.0.4"
 	},
 	"dependencies": {
-		"@tailwindcss/postcss": "^4.1.13"
+		"@lucide/svelte": "^0.552.0",
+		"@tailwindcss/postcss": "^4.1.13",
+		"mode-watcher": "^1.1.0"
 	}
 }

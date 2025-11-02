@@ -13,14 +13,14 @@
 		{
 			name: 'Geyser',
 			description: 'Bridges Minecraft Java and Bedrock editions',
-			logo: 'src/resources/projects/geysermc_icon.png',
+			logo: '/resources/projects/geysermc_icon.png',
 			link: 'https://geysermc.org',
 			hasImage: false
 		},
 		{
 			name: 'Cloudburst',
 			description: 'High-performance Minecraft Bedrock server',
-			logo: 'src/resources/projects/cloudburst_icon.png',
+			logo: '/resources/projects/cloudburst_icon.png',
 			link: '#',
 			hasImage: false
 		}

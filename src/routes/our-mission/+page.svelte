@@ -64,7 +64,7 @@
 		<p class="text-base sm:text-lg text-gray-600 dark:text-gray-300 leading-relaxed mb-8">
 			We adopt and support key free and open-source Minecraft projects to make open creation sustainable. By working closely with creators and communities, we're building an ecosystem where everyone — from individuals to large studios — has the freedom to create, the support to grow, and the tools to power the future of Minecraft.
 		</p>
-		<a href="/adopted_projects" class="inline-block px-6 py-3 bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg shadow transition font-semibold">
+		<a href="/adopted-projects" class="inline-block px-6 py-3 bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg shadow transition font-semibold">
 			Read about our Adopted Projects →
 		</a>
 	</div>

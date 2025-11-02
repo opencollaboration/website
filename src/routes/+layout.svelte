@@ -1,33 +1,20 @@
 <script lang="ts">
 	import '../app.css';
-	import favicon from '$lib/assets/ocp_icon.png';
-	import Header from '$lib/components/Header.svelte';
-	import Footer from '$lib/components/Footer.svelte';
-	import { theme } from '$lib/stores/theme';
-	import { onMount } from 'svelte';
+	import '../style.css';
+	import Header from '$lib/components/layout/Header.svelte';
+	import Footer from '$lib/components/layout/Footer.svelte';
+	import { ModeWatcher } from "mode-watcher";
 
 	let { children } = $props();
-
-	onMount(() => {
-		theme.initialize();
-		
-		// Also set up a global handler to debug
-		if (typeof window !== 'undefined') {
-			(window as any).debugTheme = () => {
-				console.log('Current theme:', document.documentElement.classList);
-				console.log('Has dark class:', document.documentElement.classList.contains('dark'));
-				console.log('Has light class:', document.documentElement.classList.contains('light'));
-				console.log('LocalStorage theme:', localStorage.getItem('theme'));
-			};
-		}
-	});
 </script>
 
 <svelte:head>
-	<link rel="icon" href={favicon} />
+	<link rel="icon" href={"/resources/favicon.svg"} />
 </svelte:head>
 
 <div class="min-h-screen font-inter bg-gray-50 dark:bg-gray-900 flex flex-col">
+	<ModeWatcher defaultMode={"dark"} themeColors={{ dark: "black", light: "white" }} />
+
 	<Header />
 	<main class="flex-1">
 		{@render children?.()}
