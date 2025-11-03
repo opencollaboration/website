@@ -34,12 +34,12 @@
   ];
 </script>
 
-<footer class="bg-gray-800 dark:bg-gray-950 text-white py-12" id="contact">
+<footer class="bg-white/80 dark:bg-gray-950 text-white py-12" id="contact">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="grid grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8">
       <!-- Navigation Links -->
       <div>
-        <h4 class="text-base sm:text-lg font-semibold mb-4">Navigation</h4>
+        <h4 class="text-base text-gray-600 dark:text-white sm:text-lg font-semibold mb-4">Navigation</h4>
         <ul class="space-y-2 sm:space-y-3 text-gray-400 text-xs sm:text-sm">
           {#each navItems as item}
             <li>
@@ -56,7 +56,7 @@
 
       <!-- Info Links -->
       <div>
-        <h4 class="text-base sm:text-lg font-semibold mb-4">Info</h4>
+        <h4 class="text-base sm:text-lg text-gray-600 dark:text-white font-semibold mb-4">Info</h4>
         <ul class="space-y-2 sm:space-y-3 text-gray-400 text-xs sm:text-sm">
           <li>
             <a
@@ -77,7 +77,7 @@
 
       <!-- Contact & Social -->
       <div class="col-span-2 md:col-span-1">
-        <h4 class="text-base sm:text-lg font-semibold mb-4">Get in Touch</h4>
+        <h4 class="text-base sm:text-lg text-gray-600 dark:text-white font-semibold mb-4">Get in Touch</h4>
         <ul class="space-y-2 sm:space-y-3 text-gray-400 text-xs sm:text-sm">
           {#each socials as social}
             <li>
