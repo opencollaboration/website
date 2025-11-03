@@ -9,7 +9,7 @@
 </script>
 
 <svelte:head>
-	<link rel="icon" href={"/resources/favicon.svg"} />
+	<link rel="icon" href={"/resources/oc_icon.png"} />
 </svelte:head>
 
 <div class="min-h-screen font-inter bg-gray-50 dark:bg-gray-900 flex flex-col">
