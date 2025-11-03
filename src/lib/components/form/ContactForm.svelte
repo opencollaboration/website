@@ -1,6 +1,6 @@
 <script>
   import { goto } from "$app/navigation";
-  import { Check } from "@lucide/svelte";
+  import { Check, MailIcon, TwitterIcon, XIcon } from "@lucide/svelte";
   import { fade } from "svelte/transition";
 
   const formFields = [
@@ -148,6 +148,24 @@
             SEND
           </button>
         </form>
+        <div
+          class="mt-12 flex flex-col sm:flex-row justify-between items-start sm:items-center space-y-4 sm:space-y-0 text-xs"
+        >
+          <div class="flex items-center gap-3 text-gray-600 dark:text-gray-400">
+          <span class='text-lg'>  X</span>
+            <div>
+              <span class="font-bold">Twitter / X</span><br />@opencollaboration
+            </div>
+          </div>
+
+          <div class="flex items-center gap-3 text-gray-600 dark:text-gray-400">
+            <MailIcon />
+            <div>
+              <span class="font-bold">EMAIL</span><br
+              />contact@opencollaboration.dev
+            </div>
+          </div>
+        </div>
       </div>
 
       <div class="w-full md:w-1/2 hidden md:block">
