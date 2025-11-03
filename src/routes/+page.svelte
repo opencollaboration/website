@@ -4,6 +4,7 @@
   import Hero from "$lib/components/landing/Hero.svelte";
   import Mission from "$lib/components/landing/Mission.svelte";
   import Partners from "$lib/components/landing/Partners.svelte";
+  import NewsTicker from "$lib/components/ui/mini-blog/NewsTicker.svelte";
   import { onMount } from "svelte";
 
   let partnersWithStatus: typeof partners = $state(partners);
@@ -30,6 +31,7 @@
 </script>
 
 <Hero />
+<NewsTicker />
 <Mission />
 <Partners {partnersWithStatus} />
 <GetInvolved />
