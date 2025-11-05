@@ -10,7 +10,7 @@
   let navItems: NavItem[] = [
     { name: "Our Mission", href: "/our-mission" },
     { name: "Adopted Projects", href: "/adopted-projects" },
-    { name: "Offers", href: "#offers" },
+    { name: "Offers", href: "/our-offer" },
     { name: "Our Team", href: "/our-team" },
     { name: "Join us!", href: "/join-us" },
   ];

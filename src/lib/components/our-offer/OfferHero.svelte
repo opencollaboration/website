@@ -1,0 +1,13 @@
+<section class="py-16 sm:py-24 bg-indigo-600 dark:bg-indigo-900">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white mb-6">
+        Our Offers
+    </h1>
+    <p
+      class="text-lg sm:text-xl lg:text-2xl text-indigo-100 dark:text-indigo-300"
+    >
+      Accelerate your growth with dedicated support from the core developers. We
+      offer tailored partnerships for server networks and hosting providers.
+    </p>
+  </div>
+</section>
