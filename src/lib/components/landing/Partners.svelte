@@ -1,5 +1,39 @@
 <script>
+  import { onDestroy } from "svelte";
+
   let { partnersWithStatus } = $props();
+
+  const INACTIVITY_TIMEOUT = 5000;
+  const PIXELS_PER_SECOND = 60; 
+
+  let isAnimating = $state(true);
+  let animationDuration = $state(60)
+  let marqueeTrack; 
+  let inactivityTimeoutId;
+
+  function pauseAnimation() {
+    isAnimating = false;
+    clearTimeout(inactivityTimeoutId);
+    inactivityTimeoutId = setTimeout(() => {
+      isAnimating = true;
+    }, INACTIVITY_TIMEOUT);
+  }
+
+  $effect(() => {
+    if (marqueeTrack) {
+      const measureWidth = () => {
+        const contentWidth = marqueeTrack.scrollWidth / 2;
+        if (contentWidth > 0) {
+          animationDuration = contentWidth / PIXELS_PER_SECOND;
+        }
+      };
+      requestAnimationFrame(measureWidth);
+    }
+  });
+
+  onDestroy(() => {
+    clearTimeout(inactivityTimeoutId);
+  });
 </script>
 
 <section
@@ -20,40 +54,155 @@
       </p>
     </div>
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-      {#each partnersWithStatus as partner}
-        <div
-          class="bg-white dark:bg-gray-800 p-6 sm:p-8 rounded-2xl shadow-lg hover:shadow-2xl transition duration-300 flex flex-col items-center text-center transform hover:scale-105"
-        >
-          <div
-            class="mb-6 h-24 sm:h-32 w-full flex items-center justify-center"
-          >
-            {#if partner.hasImage}
-              <img
-                src={partner.logo}
-                alt={partner.name}
-                class="max-h-full max-w-full object-contain"
-                loading="lazy"
-                style="outline: none; border: none;"
-              />
-            {:else}
-              <span
-                class="text-indigo-700 dark:text-indigo-500 font-bold text-lg sm:text-2xl uppercase tracking-wide"
-              >
-                {partner.name}
-              </span>
-            {/if}
+    <div
+      class="marquee-container"
+      role="region"
+      aria-label="Partners Carousel"
+      on:pointerdown={pauseAnimation}
+      on:focusin={pauseAnimation}
+      on:wheel|passive={pauseAnimation}
+    >
+      <div
+        class="marquee-track p-10"
+        class:is-animating={isAnimating}
+        style:--duration="{animationDuration}s"
+        bind:this={marqueeTrack}
+      >
+        {#each partnersWithStatus as partner (partner.name + "1")}
+          <div class="partner-card hover:shadow-md">
+            <div
+              class="mb-6 h-24 sm:h-32 w-full flex items-center justify-center"
+            >
+              {#if partner.hasImage}
+                <img
+                  src={partner.logo}
+                  alt={partner.name}
+                  class="max-h-full max-w-full object-contain"
+                  loading="lazy"
+                />
+              {:else}
+                <span
+                  class="text-indigo-700 dark:text-indigo-500 font-bold text-lg sm:text-2xl uppercase tracking-wide"
+                >
+                  {partner.name}
+                </span>
+              {/if}
+            </div>
+            <h4
+              class="text-lg sm:text-xl font-bold text-gray-900 dark:text-white mb-3"
+            >
+              {partner.name}
+            </h4>
+            <p class="text-sm text-gray-600 dark:text-gray-300">
+              {partner.description}
+            </p>
           </div>
-          <h4
-            class="text-lg sm:text-xl font-bold text-gray-900 dark:text-white mb-3"
-          >
-            {partner.name}
-          </h4>
-          <p class="text-sm text-gray-600 dark:text-gray-300">
-            {partner.description}
-          </p>
-        </div>
-      {/each}
+        {/each}
+
+        {#each partnersWithStatus as partner (partner.name + "2")}
+          <div class="partner-card hover:shadow-md" aria-hidden="true">
+            <div
+              class="mb-6 h-24 sm:h-32 w-full flex items-center justify-center"
+            >
+              {#if partner.hasImage}
+                <img
+                  src={partner.logo}
+                  alt={partner.name}
+                  class="max-h-full max-w-full object-contain"
+                  loading="lazy"
+                />
+              {:else}
+                <span
+                  class="text-indigo-700 dark:text-indigo-500 font-bold text-lg sm:text-2xl uppercase tracking-wide"
+                >
+                  {partner.name}
+                </span>
+              {/if}
+            </div>
+            <h4
+              class="text-lg sm:text-xl font-bold text-gray-900 dark:text-white mb-3"
+            >
+              {partner.name}
+            </h4>
+            <p class="text-sm text-gray-600 dark:text-gray-300">
+              {partner.description}
+            </p>
+          </div>
+        {/each}
+      </div>
     </div>
   </div>
 </section>
+
+<style>
+  .marquee-container {
+    overflow: hidden;
+    position: relative;
+    -webkit-mask-image: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0) 0%,
+      rgba(0, 0, 0, 1) 10%,
+      rgba(0, 0, 0, 1) 90%,
+      rgba(0, 0, 0, 0) 100%
+    );
+    mask-image: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0) 0%,
+      rgba(0, 0, 0, 1) 10%,
+      rgba(0, 0, 0, 1) 90%,
+      rgba(0, 0, 0, 0) 100%
+    );
+  }
+
+  .marquee-track {
+    display: flex;
+    gap: 2rem;
+    width: max-content;
+  }
+
+  .marquee-track.is-animating {
+    animation: marquee var(--duration) linear infinite;
+  }
+
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+
+  .partner-card {
+    flex-shrink: 0;
+    width: 320px; 
+    background-color: white;
+    padding: 2rem;
+    border-radius: 1rem;
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 300ms;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .partner-card:hover {
+    transform: scale(1.05);
+  }
+
+  :global(.dark) .partner-card {
+    background-color: #1f2937;
+  }
+  
+  @media (max-width: 640px) {
+    .partner-card {
+      width: 280px; 
+      gap: 1.5rem;
+    }
+    .marquee-track {
+        gap: 1.5rem;
+    }
+  }
+</style>
