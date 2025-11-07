@@ -39,13 +39,6 @@
 		  </figure>
 		{/each}
 	  </div>
-  
-	  <p class="text-center text-gray-600 dark:text-gray-400 mt-12 sm:mt-16 text-base sm:text-lg">
-		This group of dedicated people is responsible for <strong
-		  class="text-indigo-600 dark:text-indigo-400">handling infrastructure</strong
-		>, <strong class="text-indigo-600 dark:text-indigo-400">responding to communications</strong
-		>, and <strong class="text-indigo-600 dark:text-indigo-400">assisting adopted projects</strong
-		>.
-	  </p>
+
 	</div>
   </section>
