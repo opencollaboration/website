@@ -25,7 +25,7 @@
     },
     {
       href: "https://x.com/opencollaboration",
-      name: "Twitter / X",
+      name: "X (formerly twitter)",
     },
     {
       href: "https://github.com/opencollaboration",
