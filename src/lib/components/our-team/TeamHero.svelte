@@ -6,8 +6,8 @@
     <p
       class="text-lg sm:text-xl text-indigo-100 dark:text-indigo-300 max-w-3xl mx-auto"
     >
-      The core group responsible for the infrastructure, communications, and
-      support of all our adopted projects.
+      These people help run Open Collaboration! This includes maintaining the infrastructure, communications, and
+      supporting all our adopted projects.
     </p>
   </div>
 </section>
