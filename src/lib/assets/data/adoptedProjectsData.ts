@@ -9,16 +9,16 @@ export interface Project {
 export const adoptedProjects: Project[] = [
   {
     name: "Geyser",
-    description: "Bridges Minecraft Java and Bedrock editions",
+    description: "Bridges Minecraft Java and Bedrock: Bringing true cross-play to servers.",
     logo: "/resources/projects/geysermc_icon.png",
     link: "https://geysermc.org",
     hasImage: false,
   },
   {
     name: "Cloudburst",
-    description: "High-performance Minecraft Bedrock server",
+    description: "Maintains core libraries to power Minecraft: Bedrock Edition servers.",
     logo: "/resources/projects/cloudburst_icon.png",
-    link: "#",
+    link: "https://cloudburstmc.org/",
     hasImage: false,
   },
 ];

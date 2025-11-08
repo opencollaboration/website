@@ -49,7 +49,7 @@
       <p
         class="text-base sm:text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto"
       >
-        We collaborate with leading organizations to support and sustain free
+        We collaborate with leading commercial users to support and sustain free
         and open-source software in the Minecraft ecosystem.
       </p>
     </div>

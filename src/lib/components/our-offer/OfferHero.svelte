@@ -6,8 +6,9 @@
     <p
       class="text-lg sm:text-xl lg:text-2xl text-indigo-100 dark:text-indigo-300"
     >
-      Accelerate your growth with dedicated support from the core developers. We
-      offer tailored partnerships for server networks and hosting providers.
+      Accelerate your growth with dedicated support from first-class developers. We
+      offer tailored benefits for server networks and hosting providers that make supporting OSS the
+      only sensible choice.
     </p>
   </div>
 </section>
