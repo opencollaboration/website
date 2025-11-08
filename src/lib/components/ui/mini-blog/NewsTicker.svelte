@@ -1,15 +1,15 @@
 <script lang="ts">
-  import { newsItems } from "$lib/assets/news/newsData";
   import { ChevronLeftIcon, ChevronRightIcon } from "@lucide/svelte";
   import { fly, fade } from "svelte/transition";
 
+  let { articles } = $props();
+console.log(articles)
   const itemsPerPage = 4;
-  let currentPage = 1;
+  let currentPage = $state(1);
 
-  $: totalPages = Math.ceil(newsItems.length / itemsPerPage);
-  $: paginatedItems = newsItems.slice(
-    (currentPage - 1) * itemsPerPage,
-    currentPage * itemsPerPage
+  const totalPages = $derived(Math.ceil(articles.length / itemsPerPage));
+  const paginatedItems = $derived(
+    articles.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage)
   );
 
   function nextPage() {
@@ -35,14 +35,14 @@
 
     {#key currentPage}
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-        {#each paginatedItems as item, i (item.id)}
+        {#each paginatedItems as item, i (item.slug)}
           <div
             in:fly={{ y: 20, duration: 300, delay: i * 75 }}
             out:fade={{ duration: 150 }}
             class="h-full"
           >
             <a
-              href={item.link}
+              href={`#`}
               class="block bg-gray-100 dark:bg-slate-800 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 h-full"
             >
               <div class="flex flex-col h-full">
@@ -58,7 +58,7 @@
                     {item.title}
                   </h3>
                   <p class="text-gray-600 dark:text-gray-300 text-sm flex-grow">
-                    {item.snippet}
+                    {item.description}
                   </p>
                 </div>
               </div>
@@ -68,7 +68,6 @@
       </div>
     {/key}
 
-    <!-- Pagination Controls -->
     <div class="flex justify-center items-center gap-4 mt-12">
       <button
         on:click={prevPage}
