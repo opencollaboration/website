@@ -174,7 +174,13 @@
           </div>
         </form>
         <div
-          class="mt-12 flex flex-col sm:flex-row justify-between items-start sm:items-center space-y-4 sm:space-y-0 text-xs"
+        class="mt-12 flex flex-col sm:flex-row justify-between items-start sm:items-center space-y-4 sm:space-y-0 text-xs"
+      >
+        <a
+          href="https://twitter.com/opencollaboration"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="hover:opacity-80 transition-opacity"
         >
           <div class="flex items-center gap-3 text-gray-600 dark:text-gray-400">
             <span class="text-lg"> X</span>
@@ -182,7 +188,12 @@
               <span class="font-bold">Twitter / X</span><br />@opencollaboration
             </div>
           </div>
-
+        </a>
+    
+        <a 
+          href="mailto:contact@opencollaboration.dev"
+          class="hover:opacity-80 transition-opacity"
+        >
           <div class="flex items-center gap-3 text-gray-600 dark:text-gray-400">
             <MailIcon />
             <div>
@@ -190,7 +201,8 @@
               />contact@opencollaboration.dev
             </div>
           </div>
-        </div>
+        </a>
+    </div>
       </div>
 
       <div class="w-full md:w-1/2 hidden md:block">

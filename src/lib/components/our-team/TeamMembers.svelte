@@ -10,7 +10,7 @@
 	  <div class="flex flex-wrap justify-center gap-8">
 		{#each teamMembers as member, i}
 		  <figure
-			class="font-roboto relative overflow-hidden max-w-[315px] w-full bg-white dark:bg-gray-800 text-dark dark:text-white text-left leading-snug"
+			class="font-roboto relative rounded-lg overflow-hidden max-w-[315px] w-full bg-white dark:bg-gray-800 text-dark dark:text-white text-left leading-snug"
 		  >
 			<img
 			  src={member.background}

@@ -3,19 +3,19 @@
 
   let { partnersWithStatus } = $props();
 
-  const INACTIVITY_TIMEOUT = 5000;
+  const INACTIVITY_TIMEOUT = 2000;
   const PIXELS_PER_SECOND = 60; 
 
-  let isAnimating = $state(true);
-  let animationDuration = $state(60)
+  let isRunning = $state(true);
+  let animationDuration = $state(320)
   let marqueeTrack; 
   let inactivityTimeoutId;
 
   function pauseAnimation() {
-    isAnimating = false;
+    isRunning = false;
     clearTimeout(inactivityTimeoutId);
     inactivityTimeoutId = setTimeout(() => {
-      isAnimating = true;
+      isRunning = true;
     }, INACTIVITY_TIMEOUT);
   }
 
@@ -64,7 +64,7 @@
     >
       <div
         class="marquee-track p-10"
-        class:is-animating={isAnimating}
+        class:is-running={isRunning}
         style:--duration="{animationDuration}s"
         bind:this={marqueeTrack}
       >
@@ -158,10 +158,11 @@
     display: flex;
     gap: 2rem;
     width: max-content;
+    animation: marquee var(--duration) linear infinite;
   }
 
-  .marquee-track.is-animating {
-    animation: marquee var(--duration) linear infinite;
+  .marquee-track:not(.is-running) {
+    animation-play-state: paused;
   }
 
   @keyframes marquee {
