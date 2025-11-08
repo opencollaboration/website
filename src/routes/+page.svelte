@@ -7,6 +7,8 @@
   import NewsTicker from "$lib/components/ui/mini-blog/NewsTicker.svelte";
   import { onMount } from "svelte";
 
+  let { data } = $props();
+  console.log(data);
   let partnersWithStatus: typeof partners = $state(partners);
 
   function checkImage(url: string) {
@@ -31,7 +33,7 @@
 </script>
 
 <Hero />
-<NewsTicker />
+<NewsTicker articles={data.data} />
 <Mission />
 <Partners {partnersWithStatus} />
 <GetInvolved />
