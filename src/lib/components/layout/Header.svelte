@@ -41,7 +41,7 @@
           alt="Open Collaboration Logo"
           class="h-10 w-auto"
         />
-        <span>Open Collaboration</span>
+        <span class="text-sm lg:text-2xl">Open Collaboration</span>
       </a>
 
       <!-- Desktop Navigation & Toggle -->
