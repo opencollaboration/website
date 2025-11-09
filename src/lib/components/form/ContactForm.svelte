@@ -32,7 +32,7 @@
       id: "message",
       component: "input",
       type: "text",
-      placeholder: "Don't be shy! Tell us how we can help you :)",
+      placeholder: "Don't be shy! Just say hi :)",
     }
   ];
 
@@ -102,10 +102,10 @@
         <h1
           class="text-4xl sm:text-5xl font-bold text-gray-800 dark:text-white mb-3"
         >
-          <span class="text-indigo-500">Join </span> Us
+          <span class="text-indigo-500">Contact </span> Us
         </h1>
         <p class="text-gray-600 dark:text-gray-400 mb-8 text-sm sm:text-base">
-          Want to become a part of the Open Collaboration Project? Join now!
+          Want to become a part of the Open Collaboration Project? Let's talk!
         </p>
         <form on:submit|preventDefault={handleSubmit} novalidate>
           <div class="space-y-6">

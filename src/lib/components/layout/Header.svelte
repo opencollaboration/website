@@ -12,7 +12,7 @@
     { name: "Adopted Projects", href: "/adopted-projects" },
     { name: "Offers", href: "/our-offer" },
     { name: "Our Team", href: "/our-team" },
-    { name: "Join us!", href: "/join-us" },
+    { name: "Chat with us!", href: "/contact" },
   ];
 
   let mobileMenuOpen = $state(false);
