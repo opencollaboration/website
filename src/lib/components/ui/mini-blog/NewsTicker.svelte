@@ -3,7 +3,7 @@
   import { fly, fade } from "svelte/transition";
 
   let { articles } = $props();
-console.log(articles)
+  console.log(articles);
   const itemsPerPage = 4;
   let currentPage = $state(1);
 
@@ -42,7 +42,7 @@ console.log(articles)
             class="h-full"
           >
             <a
-              href={`#`}
+              href={`/articles/${item.slug}`}
               class="block bg-gray-100 dark:bg-slate-800 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 h-full"
             >
               <div class="flex flex-col h-full">

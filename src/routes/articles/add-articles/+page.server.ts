@@ -58,19 +58,17 @@ export const actions = {
     const imagePath = path.join(imagesDir, imageFilename);
     const markdownPath = path.join(articlesDir, markdownFilename);
 
-    
     const markdownContent = `---
-title: "${title.replace(/"/g, '\\"')}"
-description: "${description.replace(/"/g, '\\"')}"
-date: "${date}"
-image: "/articleImages/${imageFilename}"
----
-
-<!-- Add your article content here -->
-`;
+    title: "${title.replace(/"/g, '\\"')}"
+    description: "${description.replace(/"/g, '\\"')}"
+    date: "${date}"
+    image: "/articleImages/${imageFilename}"
+    slug: "${slug}" 
+---    
+        `;
 
     try {
-      // --- Write Files to the Filesystem ---
+      // --- write files tro the fs ---
       await writeFile(imagePath, Buffer.from(await image.arrayBuffer()));
       await writeFile(markdownPath, markdownContent);
     } catch (err) {

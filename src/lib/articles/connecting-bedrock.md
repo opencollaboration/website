@@ -3,6 +3,7 @@ title: "Connecting Bedrock OSS developers"
 description: ""
 date: "2025-07-01"
 image: "/articleImages/opencollab-discord.jpg"
+slug: "connecting-bedrock"
 ---
 
 # Introducing: The Open Collaboration Discord

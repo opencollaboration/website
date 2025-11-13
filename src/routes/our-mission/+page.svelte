@@ -6,6 +6,9 @@
   import MissionOpenSource from "$lib/components/our-mission/MissionOpenSource.svelte";
 </script>
 
+<svelte:head>
+  <title>Our Mission</title>
+</svelte:head>
 <MissionHero />
 <MissionIntro />
 <MissionOpenSource />

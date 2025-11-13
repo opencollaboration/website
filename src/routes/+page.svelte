@@ -31,6 +31,9 @@
   });
 </script>
 
+<svelte:head>
+  <title>Open Collaboration</title>
+</svelte:head>
 <Hero />
 <NewsTicker articles={data.data} />
 <Mission />

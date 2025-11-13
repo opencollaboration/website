@@ -3,6 +3,8 @@
   import TeamMembers from "$lib/components/our-team/TeamMembers.svelte";
 </script>
 
-
+<svelte:head>
+  <title>Our Team</title>
+</svelte:head>
 <TeamHero />
 <TeamMembers />
