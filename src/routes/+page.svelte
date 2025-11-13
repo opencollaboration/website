@@ -8,7 +8,6 @@
   import { onMount } from "svelte";
 
   let { data } = $props();
-  console.log(data);
   let partnersWithStatus: typeof partners = $state(partners);
 
   function checkImage(url: string) {
