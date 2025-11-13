@@ -79,6 +79,10 @@
     $: currentTab = tabsData.find((tab) => tab.id === activeTab);
   </script>
   
+  <svelte:head>
+  <title>Our Offer</title>
+</svelte:head>
+
   <div class="bg-white dark:bg-gray-900 min-h-screen">
     <OfferHero />
     <main class="container mx-auto px-4 py-12 sm:py-16">

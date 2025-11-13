@@ -28,7 +28,10 @@
   });
 </script>
 
-<!-- Hero Section -->
+<svelte:head>
+  <title>Adopted Projects</title>
+</svelte:head>
+
 <section class="py-16 sm:py-24 bg-indigo-600 dark:bg-indigo-900">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
     <h1 class="text-4xl sm:text-5xl font-extrabold text-white mb-4">
@@ -42,7 +45,6 @@
   </div>
 </section>
 
-<!-- Projects Grid -->
 <section class="py-16 sm:py-24 bg-gray-50 dark:bg-gray-900">
   <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="grid md:grid-cols-2 gap-8">
