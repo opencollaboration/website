@@ -10,7 +10,6 @@ export function load({ params }) {
   const { slug } = params;
   const markdownPath = path.join(articlesDir, `${slug}.md`);
 
-  console.log(markdownPath)
   try {
     const fileContent = readFileSync(markdownPath, "utf-8");
     console.log(fileContent)
