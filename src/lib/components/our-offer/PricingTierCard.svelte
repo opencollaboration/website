@@ -57,14 +57,14 @@
   </div>
   {#if tier.isMostPopular}
     <a
-      href="/join-us"
+      href="/contact"
       class="mt-10 block rounded-md bg-indigo-600 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 transition-colors"
     >
       {tier.ctaText}
     </a>
   {:else}
     <a
-      href="/join-us"
+      href="/contact"
       class="mt-10 block rounded-md bg-white dark:bg-gray-700 px-3.5 py-2.5 text-center text-sm font-semibold text-indigo-600 dark:text-indigo-300 shadow-sm ring-1 ring-inset ring-indigo-300 dark:ring-indigo-600 hover:bg-indigo-50 dark:hover:bg-indigo-900/50 transition-colors"
     >
       {tier.ctaText}
