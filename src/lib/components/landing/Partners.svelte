@@ -1,15 +1,15 @@
-<script>
+<script lang="ts">
   import { onDestroy } from "svelte";
-
-  let { partnersWithStatus } = $props();
+  import type { Partner } from "../../../routes/+page.server";
+  let { partners } = $props<{ partners: Partner[] }>();
 
   const INACTIVITY_TIMEOUT = 2000;
-  const PIXELS_PER_SECOND = 60; 
+  const PIXELS_PER_SECOND = 60;
 
   let isRunning = $state(true);
-  let animationDuration = $state(320)
-  let marqueeTrack; 
-  let inactivityTimeoutId;
+  let animationDuration = $state(320);
+  let marqueeTrack: HTMLDivElement;
+  let inactivityTimeoutId: ReturnType<typeof setTimeout>;
 
   function pauseAnimation() {
     isRunning = false;
@@ -58,9 +58,9 @@
       class="marquee-container"
       role="region"
       aria-label="Partners Carousel"
-      on:pointerdown={pauseAnimation}
-      on:focusin={pauseAnimation}
-      on:wheel|passive={pauseAnimation}
+      onpointerdown={pauseAnimation}
+      onfocusin={pauseAnimation}
+      onwheel={pauseAnimation}
     >
       <div
         class="marquee-track p-10"
@@ -68,25 +68,30 @@
         style:--duration="{animationDuration}s"
         bind:this={marqueeTrack}
       >
-        {#each partnersWithStatus as partner (partner.name + "1")}
-          <div class="partner-card hover:shadow-md">
+        {#each partners as partner (partner.slug + "1")}
+          <a
+            href={partner.website}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="partner-card hover:shadow-md"
+          >
             <div
               class="mb-6 h-24 sm:h-32 w-full flex items-center justify-center"
             >
-              {#if partner.hasImage}
-                <img
-                  src={partner.logo}
-                  alt={partner.name}
-                  class="max-h-full max-w-full object-contain"
-                  loading="lazy"
-                />
-              {:else}
-                <span
-                  class="text-indigo-700 dark:text-indigo-500 font-bold text-lg sm:text-2xl uppercase tracking-wide"
-                >
-                  {partner.name}
-                </span>
-              {/if}
+              <img
+                src={partner.lightLogo.path}
+                alt={partner.name}
+                class="max-h-full max-w-full object-contain dark:hidden"
+                loading="lazy"
+                style:filter="hue-rotate({partner.lightLogo.hue}deg) {partner.lightLogo.inverted ? 'invert(1)' : ''}"
+              />
+              <img
+                src={partner.darkLogo.path}
+                alt={partner.name}
+                class="max-h-full max-w-full object-contain hidden dark:block"
+                loading="lazy"
+                style:filter="hue-rotate({partner.darkLogo.hue}deg) {partner.darkLogo.inverted ? 'invert(1)' : ''}"
+              />
             </div>
             <h4
               class="text-lg sm:text-xl font-bold text-gray-900 dark:text-white mb-3"
@@ -96,28 +101,34 @@
             <p class="text-sm text-gray-600 dark:text-gray-300">
               {partner.description}
             </p>
-          </div>
+          </a>
         {/each}
 
-        {#each partnersWithStatus as partner (partner.name + "2")}
-          <div class="partner-card hover:shadow-md" aria-hidden="true">
+        {#each partners as partner (partner.slug + "2")}
+          <a
+            href={partner.website}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="partner-card hover:shadow-md"
+            aria-hidden="true"
+          >
             <div
               class="mb-6 h-24 sm:h-32 w-full flex items-center justify-center"
             >
-              {#if partner.hasImage}
-                <img
-                  src={partner.logo}
-                  alt={partner.name}
-                  class="max-h-full max-w-full object-contain"
-                  loading="lazy"
-                />
-              {:else}
-                <span
-                  class="text-indigo-700 dark:text-indigo-500 font-bold text-lg sm:text-2xl uppercase tracking-wide"
-                >
-                  {partner.name}
-                </span>
-              {/if}
+              <img
+                src={partner.lightLogo.path}
+                alt={partner.name}
+                class="max-h-full max-w-full object-contain dark:hidden"
+                loading="lazy"
+                style:filter="hue-rotate({partner.lightLogo.hue}deg) {partner.lightLogo.inverted ? 'invert(1)' : ''}"
+              />
+              <img
+                src={partner.darkLogo.path}
+                alt={partner.name}
+                class="max-h-full max-w-full object-contain hidden dark:block"
+                loading="lazy"
+                style:filter="hue-rotate({partner.darkLogo.hue}deg) {partner.darkLogo.inverted ? 'invert(1)' : ''}"
+              />
             </div>
             <h4
               class="text-lg sm:text-xl font-bold text-gray-900 dark:text-white mb-3"
@@ -127,7 +138,7 @@
             <p class="text-sm text-gray-600 dark:text-gray-300">
               {partner.description}
             </p>
-          </div>
+          </a>
         {/each}
       </div>
     </div>
@@ -176,7 +187,7 @@
 
   .partner-card {
     flex-shrink: 0;
-    width: 320px; 
+    width: 320px;
     background-color: white;
     padding: 2rem;
     border-radius: 1rem;
@@ -187,6 +198,7 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
+    text-decoration: none;
   }
 
   .partner-card:hover {
@@ -196,14 +208,14 @@
   :global(.dark) .partner-card {
     background-color: #1f2937;
   }
-  
+
   @media (max-width: 640px) {
     .partner-card {
-      width: 280px; 
+      width: 280px;
       gap: 1.5rem;
     }
     .marquee-track {
-        gap: 1.5rem;
+      gap: 1.5rem;
     }
   }
 </style>
