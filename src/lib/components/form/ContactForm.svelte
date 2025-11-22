@@ -88,7 +88,7 @@
         projects!
       </p>
       <button
-        class="my-2 bg-indigo-500 py-2 px-4 cursor-pointer"
+        class="my-2 bg-primary-500 py-2 px-4 cursor-pointer"
         on:click={() => {
           goto("/adopted-projects");
         }}>Go to Adopted Projects</button
@@ -100,11 +100,11 @@
     >
       <div class="w-full md:w-1/2 p-8 sm:p-12">
         <h1
-          class="text-4xl sm:text-5xl font-bold text-gray-800 dark:text-white mb-3"
+          class="text-4xl sm:text-5xl font-bold text-primary-800 dark:text-white mb-3"
         >
-          <span class="text-indigo-500">Contact </span> Us
+          <span class="text-primary-500">Contact </span> Us
         </h1>
-        <p class="text-gray-600 dark:text-gray-400 mb-8 text-sm sm:text-base">
+        <p class="text-primary-600 dark:text-primary-400 mb-8 text-sm sm:text-base">
           Want to become a part of the Open Collaboration Project? Let's talk!
         </p>
         <form on:submit|preventDefault={handleSubmit} novalidate>
@@ -116,16 +116,16 @@
                     type={field.type}
                     placeholder={field.placeholder}
                     bind:value={formData[field.id]}
-                    class="w-full p-3 bg-gray-100 dark:bg-slate-700 text-gray-800 dark:text-gray-200 border rounded-md focus:ring-2 focus:outline-none transition {errors[
+                    class="w-full p-3 bg-gray-100 dark:bg-slate-700 text-primary-800 dark:text-primary-200 border rounded-md focus:ring-2 focus:outline-none transition {errors[
                       field.id
                     ]
                       ? 'border-red-500'
-                      : 'border-gray-200 dark:border-slate-600'} focus:ring-indigo-500"
+                      : 'border-gray-200 dark:border-slate-600'} focus:ring-primary-500"
                   />
                 {:else if field.component === "select"}
                   <select
                     bind:value={formData[field.id]}
-                    class="w-full p-3 bg-gray-100 dark:bg-slate-700 text-gray-600 dark:text-gray-300 border border-gray-200 dark:border-slate-600 rounded-md focus:ring-2 focus:ring-indigo-500 focus:outline-none appearance-none"
+                    class="w-full p-3 bg-gray-100 dark:bg-slate-700 text-primary-600 dark:text-primary-300 border border-gray-200 dark:border-slate-600 rounded-md focus:ring-2 focus:ring-primary-500 focus:outline-none appearance-none"
                   >
                     <option value="" disabled>{field.placeholder}</option>
                     {#each field.options as option}
@@ -143,7 +143,7 @@
           <div class="flex items-center justify-center flex-col">
             <button
               type="submit"
-              class="w-full cursor-pointer mt-8 bg-indigo-500 text-white font-bold py-3 px-4 rounded-md hover:bg-indigo-600 active:bg-indigo-700 transition-colors duration-300"
+              class="w-full cursor-pointer mt-8 bg-primary-500 text-white font-bold py-3 px-4 rounded-md hover:bg-primary-600 active:bg-primary-700 transition-colors duration-300"
             >
               SEND
             </button>
@@ -182,7 +182,7 @@
           rel="noopener noreferrer"
           class="hover:opacity-80 transition-opacity"
         >
-          <div class="flex items-center gap-3 text-gray-600 dark:text-gray-400">
+          <div class="flex items-center gap-3 text-primary-600 dark:text-primary-400">
             <span class="text-lg"> X</span>
             <div>
               <span class="font-bold">Twitter / X</span><br />@opencollaboration
@@ -194,7 +194,7 @@
           href="mailto:contact@opencollaboration.dev"
           class="hover:opacity-80 transition-opacity"
         >
-          <div class="flex items-center gap-3 text-gray-600 dark:text-gray-400">
+          <div class="flex items-center gap-3 text-primary-600 dark:text-primary-400">
             <MailIcon />
             <div>
               <span class="font-bold">EMAIL</span><br

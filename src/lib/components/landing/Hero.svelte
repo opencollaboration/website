@@ -1,5 +1,5 @@
 <section
-  class="relative hero-background text-white h-screen overflow-hidden bg-indigo-700 flex flex-col items-center justify-center text-center"
+  class="relative hero-background text-white h-screen overflow-hidden bg-primary-700 flex flex-col items-center justify-center text-center"
 >
   <!-- Dark overlay  -->
   <div class="absolute inset-0 bg-black/30 dark:bg-black/60"></div>

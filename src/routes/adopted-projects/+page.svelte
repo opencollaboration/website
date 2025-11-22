@@ -32,13 +32,13 @@
   <title>Adopted Projects</title>
 </svelte:head>
 
-<section class="py-16 sm:py-24 bg-indigo-600 dark:bg-indigo-900">
+<section class="py-16 sm:py-24 bg-primary-600 dark:bg-primary-900">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
     <h1 class="text-4xl sm:text-5xl font-extrabold text-white mb-4">
       Adopted Projects
     </h1>
     <p
-      class="text-lg sm:text-xl text-indigo-100 dark:text-indigo-300 max-w-3xl mx-auto"
+      class="text-lg sm:text-xl text-primary-100 dark:text-primary-300 max-w-3xl mx-auto"
     >
       Free and open-source projects we actively support and contribute to
     </p>
@@ -63,20 +63,20 @@
               />
             {:else}
               <span
-                class="text-2xl font-bold text-indigo-600 dark:text-indigo-400"
+                class="text-2xl font-bold text-primary-600 dark:text-primary-400"
                 >{project.name}</span
               >
             {/if}
           </div>
-          <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-3">
+          <h3 class="text-2xl font-bold text-primary-900 dark:text-white mb-3">
             {project.name}
           </h3>
-          <p class="text-base text-gray-600 dark:text-gray-300 mb-6">
+          <p class="text-base text-primary-600 dark:text-primary-300 mb-6">
             {project.description}
           </p>
           <a
             href={project.link}
-            class="inline-flex items-center text-indigo-600 dark:text-indigo-400 hover:text-indigo-800 dark:hover:text-indigo-300 font-semibold transition"
+            class="inline-flex items-center text-primary-600 dark:text-primary-400 hover:text-primary-800 dark:hover:text-primary-300 font-semibold transition"
           >
             Learn More →
           </a>

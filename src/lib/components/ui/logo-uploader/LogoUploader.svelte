@@ -58,7 +58,7 @@
 </script>
 
 <div>
-  <label class="block text-sm font-medium text-gray-700 dark:text-gray-300">
+  <label class="block text-sm font-medium text-primary-700 dark:text-primary-300">
     {label}
   </label>
 
@@ -76,8 +76,8 @@
 
   <div
     class="mt-1 flex justify-center px-6 py-8 border-2 border-gray-300 dark:border-gray-600 border-dashed rounded-md transition-colors"
-    class:border-indigo-500={isDragging}
-    class:dark:border-indigo-400={isDragging}
+    class:border-primary-500={isDragging}
+    class:dark:border-primary-400={isDragging}
     ondragenter={() => (isDragging = true)}
     ondragover={(e) => e.preventDefault()}
     ondragleave={() => (isDragging = false)}
@@ -102,7 +102,7 @@
           <div>
             <label
               for="{namePrefix}-hue"
-              class="text-sm text-gray-500 dark:text-gray-400"
+              class="text-sm text-primary-500 dark:text-primary-400"
             >
               Adjust Hue: {hue}°
             </label>
@@ -119,7 +119,7 @@
           <div class="flex items-center justify-between mt-3">
             <label
               for="{namePrefix}-invert"
-              class="text-sm text-gray-500 bg-indigo-500 text-white px-4 py-2 cursor-pointer rounded dark:text-gray-400"
+              class="text-sm text-primary-500 bg-primary-500 text-white px-4 py-2 cursor-pointer rounded dark:text-primary-400"
             >
               Invert Colors
             </label>
@@ -131,7 +131,7 @@
                 class="sr-only peer"
               />
               <div
-                class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-indigo-300 dark:peer-focus:ring-indigo-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-indigo-600"
+                class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-primary-300 dark:peer-focus:ring-primary-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-primary-600"
               ></div>
             </label>
           </div>
@@ -142,19 +142,19 @@
       {:else}
         <div class="flex items-center flex-col justify-center my-10">
           <ImagePlusIcon
-            class="mx-auto h-12 w-12 text-gray-400 dark:text-gray-500 "
+            class="mx-auto h-12 w-12 text-primary-400 dark:text-primary-500 "
           />
           <div
-            class="flex justify-center text-sm text-gray-600 dark:text-gray-400"
+            class="flex justify-center text-sm text-primary-600 dark:text-primary-400"
           >
             <label
               for={namePrefix}
-              class="relative cursor-pointer bg-white dark:bg-gray-800 rounded-md font-medium text-indigo-600 dark:text-indigo-400 hover:text-indigo-500"
+              class="relative cursor-pointer bg-white dark:bg-gray-800 rounded-md font-medium text-primary-600 dark:text-primary-400 hover:text-primary-500"
             >
               <span>Upload a file</span>
             </label>
           </div>
-          <p class="text-xs text-gray-500 dark:text-gray-500">
+          <p class="text-xs text-primary-500 dark:text-primary-500">
             PNG, JPG, GIF, WEBP, SVG
           </p>
         </div>

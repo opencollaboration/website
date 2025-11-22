@@ -42,12 +42,17 @@
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="text-center mb-12">
       <h3
-        class="text-3xl sm:text-4xl font-extrabold tracking-wider text-gray-900 dark:text-white mb-4"
+        class="text-3xl sm:text-4xl font-extrabold tracking-wider text-primary-900 dark:text-white mb-4"
       >
-        Backed by our Partners
+        Backed by our
+        <span
+          class="tracking-wide font-extrabold beachday text-primary dark:text-accent"
+        >
+          Partners
+        </span>
       </h3>
       <p
-        class="text-base sm:text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto"
+        class="text-base sm:text-lg text-primary-600 dark:text-primary-400 max-w-2xl mx-auto"
       >
         We collaborate with leading commercial users to support and sustain free
         and open-source software in the Minecraft ecosystem.
@@ -83,22 +88,28 @@
                 alt={partner.name}
                 class="max-h-full max-w-full object-contain dark:hidden"
                 loading="lazy"
-                style:filter="hue-rotate({partner.lightLogo.hue}deg) {partner.lightLogo.inverted ? 'invert(1)' : ''}"
+                style:filter="hue-rotate({partner.lightLogo.hue}deg) {partner
+                  .lightLogo.inverted
+                  ? 'invert(1)'
+                  : ''}"
               />
               <img
                 src={partner.darkLogo.path}
                 alt={partner.name}
                 class="max-h-full max-w-full object-contain hidden dark:block"
                 loading="lazy"
-                style:filter="hue-rotate({partner.darkLogo.hue}deg) {partner.darkLogo.inverted ? 'invert(1)' : ''}"
+                style:filter="hue-rotate({partner.darkLogo.hue}deg) {partner
+                  .darkLogo.inverted
+                  ? 'invert(1)'
+                  : ''}"
               />
             </div>
             <h4
-              class="text-lg sm:text-xl font-bold text-gray-900 dark:text-white mb-3"
+              class="text-lg sm:text-xl font-bold text-primary-900 dark:text-white mb-3"
             >
               {partner.name}
             </h4>
-            <p class="text-sm text-gray-600 dark:text-gray-300">
+            <p class="text-sm text-primary-600 dark:text-primary-300">
               {partner.description}
             </p>
           </a>
@@ -120,22 +131,28 @@
                 alt={partner.name}
                 class="max-h-full max-w-full object-contain dark:hidden"
                 loading="lazy"
-                style:filter="hue-rotate({partner.lightLogo.hue}deg) {partner.lightLogo.inverted ? 'invert(1)' : ''}"
+                style:filter="hue-rotate({partner.lightLogo.hue}deg) {partner
+                  .lightLogo.inverted
+                  ? 'invert(1)'
+                  : ''}"
               />
               <img
                 src={partner.darkLogo.path}
                 alt={partner.name}
                 class="max-h-full max-w-full object-contain hidden dark:block"
                 loading="lazy"
-                style:filter="hue-rotate({partner.darkLogo.hue}deg) {partner.darkLogo.inverted ? 'invert(1)' : ''}"
+                style:filter="hue-rotate({partner.darkLogo.hue}deg) {partner
+                  .darkLogo.inverted
+                  ? 'invert(1)'
+                  : ''}"
               />
             </div>
             <h4
-              class="text-lg sm:text-xl font-bold text-gray-900 dark:text-white mb-3"
+              class="text-lg sm:text-xl font-bold text-primary-900 dark:text-white mb-3"
             >
               {partner.name}
             </h4>
-            <p class="text-sm text-gray-600 dark:text-gray-300">
+            <p class="text-sm text-primary-600 dark:text-primary-300">
               {partner.description}
             </p>
           </a>

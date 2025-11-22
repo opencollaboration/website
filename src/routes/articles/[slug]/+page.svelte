@@ -13,14 +13,14 @@
   <article class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
     <header class="mb-8">
       <h1
-        class="text-4xl font-extrabold text-gray-900 dark:text-white leading-tight mb-2"
+        class="text-4xl font-extrabold text-primary-900 dark:text-white leading-tight mb-2"
       >
         {data.post.title}
       </h1>
-      <p class="text-lg text-gray-500 dark:text-gray-400">
+      <p class="text-lg text-primary-500 dark:text-primary-400">
         {data.post.description}
       </p>
-      <p class="text-sm text-gray-400 dark:text-gray-500 mt-2">
+      <p class="text-sm text-primary-400 dark:text-primary-500 mt-2">
         Published on {new Date(data.post.date).toLocaleDateString("en-US", {
           year: "numeric",
           month: "long",
