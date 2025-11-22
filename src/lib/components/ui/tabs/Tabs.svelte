@@ -11,14 +11,14 @@
       <button
         on:click={() => (activeTab = tab.id)}
         class="whitespace-nowrap py-4 px-1 border-b-2 cursor-pointer font-medium text-sm transition-colors duration-200"
-        class:border-indigo-500={activeTab === tab.id}
-        class:text-indigo-600={activeTab === tab.id}
-        class:dark:text-indigo-400={activeTab === tab.id}
+        class:border-primary-500={activeTab === tab.id}
+        class:text-primary-600={activeTab === tab.id}
+        class:dark:text-primary-400={activeTab === tab.id}
         class:border-transparent={activeTab !== tab.id}
-        class:text-gray-500={activeTab !== tab.id}
+        class:text-primary-500={activeTab !== tab.id}
         class:hover:border-gray-300={activeTab !== tab.id}
-        class:hover:text-gray-700={activeTab !== tab.id}
-        class:dark:text-gray-400={activeTab !== tab.id}
+        class:hover:text-primary-700={activeTab !== tab.id}
+        class:dark:text-primary-400={activeTab !== tab.id}
         class:dark:hover:border-gray-500={activeTab !== tab.id}
       >
         {tab.label}

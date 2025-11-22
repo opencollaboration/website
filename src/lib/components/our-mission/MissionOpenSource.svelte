@@ -3,12 +3,12 @@
 >
   <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
     <h2
-      class="text-3xl sm:text-4xl font-extrabold text-gray-900 dark:text-white text-center mb-8 sm:mb-12"
+      class="text-3xl sm:text-4xl font-extrabold text-primary-900 dark:text-white text-center mb-8 sm:mb-12"
     >
       Why Open Source?
     </h2>
     <p
-      class="text-base sm:text-lg text-center text-gray-600 dark:text-gray-400 mb-8 sm:mb-10 max-w-3xl mx-auto"
+      class="text-base sm:text-lg text-center text-primary-600 dark:text-primary-400 mb-8 sm:mb-10 max-w-3xl mx-auto"
     >
       Open Source is not easy — maintaining code, documentation, and community
       takes work. But the benefits are worth it:
@@ -18,11 +18,11 @@
         class="p-6 bg-white dark:bg-gray-900 rounded-xl shadow hover:shadow-lg transition"
       >
         <h3
-          class="font-bold text-base sm:text-lg text-indigo-600 dark:text-indigo-400 mb-2"
+          class="font-bold text-base sm:text-lg text-primary-600 dark:text-primary-400 mb-2"
         >
           Innovative & Community Driven
         </h3>
-        <p class="text-sm sm:text-base text-gray-600 dark:text-gray-400">
+        <p class="text-sm sm:text-base text-primary-600 dark:text-primary-400">
           Progress shaped by creators themselves.
         </p>
       </li>
@@ -30,11 +30,11 @@
         class="p-6 bg-white dark:bg-gray-900 rounded-xl shadow hover:shadow-lg transition"
       >
         <h3
-          class="font-bold text-base sm:text-lg text-indigo-600 dark:text-indigo-400 mb-2"
+          class="font-bold text-base sm:text-lg text-primary-600 dark:text-primary-400 mb-2"
         >
           Forkable & Extensible
         </h3>
-        <p class="text-sm sm:text-base text-gray-600 dark:text-gray-400">
+        <p class="text-sm sm:text-base text-primary-600 dark:text-primary-400">
           Customization for unique needs.
         </p>
       </li>
@@ -42,11 +42,11 @@
         class="p-6 bg-white dark:bg-gray-900 rounded-xl shadow hover:shadow-lg transition"
       >
         <h3
-          class="font-bold text-base sm:text-lg text-indigo-600 dark:text-indigo-400 mb-2"
+          class="font-bold text-base sm:text-lg text-primary-600 dark:text-primary-400 mb-2"
         >
           Safe through Transparency
         </h3>
-        <p class="text-sm sm:text-base text-gray-600 dark:text-gray-400">
+        <p class="text-sm sm:text-base text-primary-600 dark:text-primary-400">
           Full access to source code.
         </p>
       </li>
@@ -54,11 +54,11 @@
         class="p-6 bg-white dark:bg-gray-900 rounded-xl shadow hover:shadow-lg transition"
       >
         <h3
-          class="font-bold text-base sm:text-lg text-indigo-600 dark:text-indigo-400 mb-2"
+          class="font-bold text-base sm:text-lg text-primary-600 dark:text-primary-400 mb-2"
         >
           Accessible to All
         </h3>
-        <p class="text-sm sm:text-base text-gray-600 dark:text-gray-400">
+        <p class="text-sm sm:text-base text-primary-600 dark:text-primary-400">
           Free to use and improve.
         </p>
       </li>
@@ -66,11 +66,11 @@
         class="p-6 bg-white dark:bg-gray-900 rounded-xl shadow hover:shadow-lg transition"
       >
         <h3
-          class="font-bold text-base sm:text-lg text-indigo-600 dark:text-indigo-400 mb-2"
+          class="font-bold text-base sm:text-lg text-primary-600 dark:text-primary-400 mb-2"
         >
           Educational
         </h3>
-        <p class="text-sm sm:text-base text-gray-600 dark:text-gray-400">
+        <p class="text-sm sm:text-base text-primary-600 dark:text-primary-400">
           Encourages learning and best practices.
         </p>
       </li>
@@ -78,11 +78,11 @@
         class="p-6 bg-white dark:bg-gray-900 rounded-xl shadow hover:shadow-lg transition"
       >
         <h3
-          class="font-bold text-base sm:text-lg text-indigo-600 dark:text-indigo-400 mb-2"
+          class="font-bold text-base sm:text-lg text-primary-600 dark:text-primary-400 mb-2"
         >
           Sustainable Value
         </h3>
-        <p class="text-sm sm:text-base text-gray-600 dark:text-gray-400">
+        <p class="text-sm sm:text-base text-primary-600 dark:text-primary-400">
           Better long-term returns than private tooling.
         </p>
       </li>

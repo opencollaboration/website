@@ -11,34 +11,34 @@
         <!-- Mission Text (left on desktop, top on mobile) -->
         <div>
           <h2
-            class="text-3xl sm:text-4xl font-extrabold text-gray-900 dark:text-white mb-4"
+            class="text-3xl sm:text-4xl md:text-5xl tracking-wide font-extrabold beachday text-primary dark:text-accent mb-4"
           >
             Our Mission
           </h2>
 
           <p
-            class="text-lg sm:text-xl text-gray-600 dark:text-gray-300 mb-6 leading-relaxed"
+            class="text-lg sm:text-xl text-primary-600 dark:text-primary-300 mb-6 leading-relaxed"
           >
-            We support <strong class="text-indigo-600 dark:text-indigo-400"
+            We support <strong class="text-primary-600 dark:text-primary-400"
               >Free Open Source Software</strong
             >
             in the
-            <strong class="text-indigo-600 dark:text-indigo-400"
+            <strong class="text-primary-600 dark:text-primary-400"
               >Minecraft Ecosystem</strong
             >. They're not just individual passion projects: many
-            <strong class="text-indigo-600 dark:text-indigo-400"
+            <strong class="text-primary-600 dark:text-primary-400"
               >creators, multiplayer servers, and players</strong
             >
             rely on them. We want to unite interests and empower project maintainers!
           </p>
 
           <p
-            class="text-lg sm:text-xl text-gray-600 dark:text-gray-300 mb-6 leading-relaxed"
+            class="text-lg sm:text-xl text-primary-600 dark:text-primary-300 mb-6 leading-relaxed"
           >
             We are here to assist: with the help of our commercial partners, we
             provide the resources, governance, and infrastructure needed to
             ensure
-            <strong class="text-indigo-600 dark:text-indigo-400"
+            <strong class="text-primary-600 dark:text-primary-400"
               >long-term success</strong
             > for OSS projects that are fundamental to the ecosystem and its users.
           </p>
@@ -48,20 +48,20 @@
         <div class="flex flex-col gap-6">
           <!-- Metric Card (non-clickable) -->
           <div
-            class="w-full p-6 sm:p-8 bg-indigo-50 dark:bg-gray-950 rounded-2xl shadow-lg flex flex-col items-center text-center transform hover:scale-105 transition-transform duration-300"
+            class="w-full p-6 sm:p-8 bg-primary-50 dark:bg-gray-950 rounded-2xl shadow-lg flex flex-col items-center text-center transform hover:scale-105 transition-transform duration-300"
           >
             <p
-              class="text-5xl sm:text-7xl font-extrabold text-indigo-700 dark:text-indigo-400 mb-1 leading-none"
+              class="text-5xl sm:text-7xl font-extrabold text-primary-700 dark:text-primary-400 mb-1 leading-none"
             >
               35,000+
             </p>
             <p
-              class="text-base sm:text-lg font-semibold text-gray-700 dark:text-gray-300"
+              class="text-base sm:text-lg font-semibold text-primary-700 dark:text-primary-300"
             >
               Servers Powered
             </p>
             <p
-              class="text-base sm:text-lg font-medium text-gray-700 dark:text-gray-300"
+              class="text-base sm:text-lg font-medium text-primary-700 dark:text-primary-300"
             >
               by our Adopted Projects
             </p>
@@ -70,10 +70,10 @@
           <!-- CTA Card filling vertical space -->
           <a
             href="our-mission"
-            class="w-full h-full bg-gradient-to-r from-indigo-600 to-indigo-500 dark:from-indigo-500 dark:to-indigo-600 rounded-2xl shadow-lg flex flex-col justify-center items-center text-center hover:scale-105 hover:shadow-2xl transition-transform duration-300 p-6 sm:p-8"
+            class="w-full h-full bg-gradient-to-r from-primary-600 to-primary-500 dark:from-primary-500 dark:to-primary-600 rounded-2xl shadow-lg flex flex-col justify-center items-center text-center hover:scale-105 hover:shadow-2xl transition-transform duration-300 p-6 sm:p-8"
           >
             <p
-              class="text-sm sm:text-base text-indigo-100 mb-2 uppercase tracking-wide"
+              class="text-sm sm:text-base text-primary-100 mb-2 uppercase tracking-wide"
             >
               Read more
             </p>

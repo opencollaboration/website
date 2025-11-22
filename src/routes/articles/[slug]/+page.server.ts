@@ -4,7 +4,7 @@ import path from "node:path";
 import frontMatter from "front-matter";
 import { marked } from "marked";
 
-const articlesDir = path.join("src", "lib", "articles");
+const articlesDir = path.join("src", "lib", "assets", "markdown", "articles");
 
 export function load({ params }) {
   const { slug } = params;
@@ -12,7 +12,7 @@ export function load({ params }) {
 
   try {
     const fileContent = readFileSync(markdownPath, "utf-8");
-    console.log(fileContent)
+    console.log(fileContent);
 
     const { attributes, body } = frontMatter(fileContent);
 
@@ -20,8 +20,8 @@ export function load({ params }) {
 
     return {
       post: {
-        ...attributes, 
-        content, 
+        ...attributes,
+        content,
       },
     };
   } catch (err) {

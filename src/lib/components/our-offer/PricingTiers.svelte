@@ -14,7 +14,7 @@
 
 {#if intro}
   <div class="text-center max-w-2xl mx-auto mb-12">
-    <p class="text-lg text-gray-600 dark:text-gray-300">
+    <p class="text-lg text-primary-600 dark:text-primary-300">
       {intro}
     </p>
   </div>
