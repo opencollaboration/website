@@ -18,7 +18,6 @@
         class:text-primary-500={activeTab !== tab.id}
         class:hover:border-gray-300={activeTab !== tab.id}
         class:hover:text-primary-700={activeTab !== tab.id}
-        class:dark:text-primary-400={activeTab !== tab.id}
         class:dark:hover:border-gray-500={activeTab !== tab.id}
       >
         {tab.label}

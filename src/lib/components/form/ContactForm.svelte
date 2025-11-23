@@ -25,7 +25,7 @@
         { value: "social", label: "Social Media" },
         { value: "friend", label: "From a friend" },
         { value: "github", label: "Found on GitHub " },
-        { value: "discord", label: "Found on Discord" }
+        { value: "discord", label: "Found on Discord" },
       ],
     },
     {
@@ -33,14 +33,14 @@
       component: "input",
       type: "text",
       placeholder: "Don't be shy! Just say hi :)",
-    }
+    },
   ];
 
   let formData = {
     name: "",
     email: "",
     source: "",
-    message: ""
+    message: "",
   };
 
   let errors = {};
@@ -77,15 +77,15 @@
   {#if submitted}
     <div
       in:fade
-      class="flex items-center justify-center flex-col bg-green-100/10 bg-green-100 dark:bg-green-900 border-l-4 border-green-500 text-green-700 dark:text-white p-4 rounded-md"
+      class="flex items-center justify-center flex-col bg-green-200 dark:bg-green-900 border-l-4 border-green-500 text-green-700 dark:text-white p-4 rounded-md"
     >
       <h1 class="text-4xl lg:text-6xl font-bold">Thank You!</h1>
       <span>
         <Check class="h-48 w-48 text-green-500" />
       </span>
       <p class="max-w-2xl mx-10 text-center">
-        Thanks for contacting us!. We will get back to you shortly, in the meantime: Check our adopted
-        projects!
+        Thanks for contacting us!. We will get back to you shortly, in the
+        meantime: Check our adopted projects!
       </p>
       <button
         class="my-2 bg-primary-500 py-2 px-4 cursor-pointer"
@@ -102,9 +102,11 @@
         <h1
           class="text-4xl sm:text-5xl font-bold text-primary-800 dark:text-white mb-3"
         >
-          <span class="text-primary-500">Contact </span> Us
+          <span class="text-accent">Contact </span> Us
         </h1>
-        <p class="text-primary-600 dark:text-primary-400 mb-8 text-sm sm:text-base">
+        <p
+          class="text-primary-600 dark:text-primary-400 mb-8 text-sm sm:text-base"
+        >
           Want to become a part of the Open Collaboration Project? Let's talk!
         </p>
         <form on:submit|preventDefault={handleSubmit} novalidate>
@@ -116,16 +118,16 @@
                     type={field.type}
                     placeholder={field.placeholder}
                     bind:value={formData[field.id]}
-                    class="w-full p-3 bg-gray-100 dark:bg-slate-700 text-primary-800 dark:text-primary-200 border rounded-md focus:ring-2 focus:outline-none transition {errors[
+                    class="w-full p-3 bg-gray-50 dark:bg-primary text-accent  border rounded-md focus:ring-2 focus:outline-none transition {errors[
                       field.id
                     ]
                       ? 'border-red-500'
-                      : 'border-gray-200 dark:border-slate-600'} focus:ring-primary-500"
+                      : 'border-gray-200 dark:border-accent'} focus:ring-primary"
                   />
                 {:else if field.component === "select"}
                   <select
                     bind:value={formData[field.id]}
-                    class="w-full p-3 bg-gray-100 dark:bg-slate-700 text-primary-600 dark:text-primary-300 border border-gray-200 dark:border-slate-600 rounded-md focus:ring-2 focus:ring-primary-500 focus:outline-none appearance-none"
+                    class="w-full p-3 dark:bg-primary text-accent border border-gray-200 dark:border-accent rounded-md focus:ring-2 focus:ring-primary-500 focus:outline-none appearance-none"
                   >
                     <option value="" disabled>{field.placeholder}</option>
                     {#each field.options as option}
@@ -143,13 +145,13 @@
           <div class="flex items-center justify-center flex-col">
             <button
               type="submit"
-              class="w-full cursor-pointer mt-8 bg-primary-500 text-white font-bold py-3 px-4 rounded-md hover:bg-primary-600 active:bg-primary-700 transition-colors duration-300"
+              class="w-full cursor-pointer mt-8 bg-accent text-primary font-bold py-3 px-4 rounded-md hover:bg-primary-600 active:bg-primary-700 transition-colors duration-300"
             >
               SEND
             </button>
-          
+
             <span class="my-4"> or </span>
-          
+
             <a
               href="https://discord.com/users/384800189975887892"
               target="_blank"
@@ -160,7 +162,7 @@
                 width="24px"
                 height="24px"
                 viewBox="0 0 24 24"
-                class="text-white" 
+                class="text-white"
                 role="img"
                 xmlns="http://www.w3.org/2000/svg"
               >
@@ -174,35 +176,40 @@
           </div>
         </form>
         <div
-        class="mt-12 flex flex-col sm:flex-row justify-between items-start sm:items-center space-y-4 sm:space-y-0 text-xs"
-      >
-        <a
-          href="https://twitter.com/opencollaboration"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="hover:opacity-80 transition-opacity"
+          class="mt-12 flex flex-col sm:flex-row justify-between items-start sm:items-center space-y-4 sm:space-y-0 text-xs"
         >
-          <div class="flex items-center gap-3 text-primary-600 dark:text-primary-400">
-            <span class="text-lg"> X</span>
-            <div>
-              <span class="font-bold">Twitter / X</span><br />@opencollaboration
+          <a
+            href="https://twitter.com/opencollaboration"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="hover:opacity-80 transition-opacity"
+          >
+            <div
+              class="flex items-center gap-3 text-primary-600 dark:text-primary-400"
+            >
+              <span class="text-lg"> X</span>
+              <div>
+                <span class="font-bold">Twitter / X</span><br
+                />@opencollaboration
+              </div>
             </div>
-          </div>
-        </a>
-    
-        <a 
-          href="mailto:contact@opencollaboration.dev"
-          class="hover:opacity-80 transition-opacity"
-        >
-          <div class="flex items-center gap-3 text-primary-600 dark:text-primary-400">
-            <MailIcon />
-            <div>
-              <span class="font-bold">EMAIL</span><br
-              />contact@opencollaboration.dev
+          </a>
+
+          <a
+            href="mailto:contact@opencollaboration.dev"
+            class="hover:opacity-80 transition-opacity"
+          >
+            <div
+              class="flex items-center gap-3 text-primary-600 dark:text-primary-400"
+            >
+              <MailIcon />
+              <div>
+                <span class="font-bold">EMAIL</span><br
+                />contact@opencollaboration.dev
+              </div>
             </div>
-          </div>
-        </a>
-    </div>
+          </a>
+        </div>
       </div>
 
       <div class="w-full md:w-1/2 hidden md:block">

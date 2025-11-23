@@ -32,9 +32,9 @@
   <title>Adopted Projects</title>
 </svelte:head>
 
-<section class="py-16 sm:py-24 bg-primary-600 dark:bg-primary-900">
+<section class="py-16 sm:py-24 bg-primary dark:bg-gray-950">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-    <h1 class="text-4xl sm:text-5xl font-extrabold text-white mb-4">
+    <h1 class="text-4xl sm:text-5xl font-extrabold mb-4 tracking-wide font-extrabold text-accent">
       Adopted Projects
     </h1>
     <p
