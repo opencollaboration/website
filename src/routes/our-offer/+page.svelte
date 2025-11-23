@@ -4,42 +4,46 @@
   import PricingTiers from "$lib/components/our-offer/PricingTiers.svelte";
   import Tabs from "$lib/components/ui/tabs/Tabs.svelte";
 
-    const baseFeatures = [
-      "Help-desk for supported software",
-      "Assistance for updates & new features",
-      "Network scaling assistance",
+    const bronzeFeatures = [
+      "Helpdesk for our adopted projects",
+      "1:1 walk-throughs through new APIs and Features",
+      "Early security advisories and migration alerts",
+      "Partner listing"
     ];
-    const proFeatures = [
-      ...baseFeatures,
-      "Dedicated 1:1 API walk-throughs",
+    const silverFeatures = [
+      ...bronzeFeatures,
+      "Set hours on retainer for feature and issue work",
       "Priority bug fixing",
+      "Issue monitoring: Catch issues before users report them"
     ];
-    const enterpriseFeatures = [
-      ...proFeatures,
+    const goldFeatures = [
+      ...silverFeatures,
       "Feature Sponsoring",
+      "Tailored benefits: Tackling what you need!",
       "Assistance with process automation",
+      "Highlighted partner status"
     ];
   
     const networkTiers = [
       {
-        name: "Builder",
-        description: "Essential support for growing networks getting off the ground.",
-        features: baseFeatures,
+        name: "Bronze",
+        description: "Dedicated support tier",
+        features: bronzeFeatures,
         ctaText: "Get in Touch",
         isMostPopular: false,
       },
       {
-        name: "Architect",
-        description: "For established networks that require priority access and deeper collaboration.",
-        features: proFeatures,
-        ctaText: "Contact Sales",
+        name: "Silver",
+        description: "More than support: Let's improve your network!",
+        features: silverFeatures,
+        ctaText: "Let's talk!",
         isMostPopular: true,
       },
       {
-        name: "Enterprise",
-        description: "Full-scale partnership to sponsor features and automate your entire workflow.",
-        features: enterpriseFeatures,
-        ctaText: "Let's Talk",
+        name: "Gold",
+        description: "For leaders in the ecosystem.",
+        features: goldFeatures,
+        ctaText: "Shoot us a message!",
         isMostPopular: false,
       },
     ];
@@ -58,10 +62,10 @@
       {
         id: "hosting",
         label: "Hosting Providers",
-        type: "tiers",
+        type: "comingSoon",
         content: {
-          intro: "Our plans for hosting providers focus on mass-scale deployments and panel integrations. Contact us for custom-tailored solutions.",
-          tiers: hostingTiers,
+          title: "Up next: Server hosting providers 👀",
+          description: "Let's work together to make things simpler. Contact us to be first!",
         },
       },
       {

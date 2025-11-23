@@ -6,9 +6,8 @@
     <p
       class="text-lg sm:text-xl lg:text-2xl text-primary-100 dark:text-primary-300"
     >
-      Accelerate your growth with dedicated support from first-class developers. We
-      offer tailored benefits for server networks and hosting providers that make supporting OSS the
-      only sensible choice.
+      Accelerate your growth with dedicated support from first-class developers.
+      We have something for everyone!
     </p>
   </div>
 </section>
