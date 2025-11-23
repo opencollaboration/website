@@ -11,7 +11,6 @@
     </h2>
 
     <div class="grid md:grid-cols-2 gap-6 sm:gap-8 mt-10">
-      <!-- Commercial Partners CTA -->
       <div
         class="p-6 sm:p-8 bg-white dark:bg-gray-800 rounded-xl shadow-2xl transition duration-300 hover:scale-[1.02] border-l-4 border-primary-600"
       >
@@ -26,7 +25,7 @@
           Explore partnership opportunities and what we can offer your business.
         </p>
         <a
-          href="#commercial-partners"
+          href="/our-offer"
           class="inline-flex items-center space-x-2 text-primary-600 dark:text-primary-400 font-semibold hover:text-primary-800 dark:hover:text-primary-300 transition duration-150"
         >
           <span>Our Offer</span>
@@ -46,7 +45,6 @@
         </a>
       </div>
 
-      <!-- Contributors and Maintainers CTA -->
       <div
         class="p-6 sm:p-8 bg-white dark:bg-gray-800 rounded-xl shadow-2xl transition duration-300 hover:scale-[1.02] border-l-4 border-primary-600"
       >
@@ -61,7 +59,7 @@
           Find out how we support projects and how you can benefit.
         </p>
         <a
-          href="#maintainers"
+          href="/our-team"
           class="inline-flex items-center space-x-2 text-primary-600 dark:text-primary-400 font-semibold hover:text-primary-800 dark:hover:text-primary-300 transition duration-150"
         >
           <span>See what we can do</span>

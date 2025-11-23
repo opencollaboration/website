@@ -51,7 +51,7 @@
         {#each navItems as item}
           <a
             href={item.href}
-            class="text-secondary hover:text-accent font-medium transition duration-150 ease-in-out"
+            class="text-secondary hover:text-primary dark:hover:text-accent font-medium transition duration-150 ease-in-out"
           >
             {item.name}
           </a>

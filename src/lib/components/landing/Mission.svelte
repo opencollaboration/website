@@ -3,12 +3,10 @@
   class="py-16 sm:py-24 bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800"
 >
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <!-- Rounded Box Wrapper -->
     <div
-      class="rounded-3xl bg-gray-50 dark:bg-gray-800 shadow-2xl p-8 sm:p-12 md:p-16 transition duration-300"
+      class="rounded-3xl bg-background dark:bg-gray-800 shadow-2xl p-8 sm:p-12 md:p-16 transition duration-300"
     >
       <div class="grid md:grid-cols-[2fr_1fr] gap-8 md:gap-12 items-start">
-        <!-- Mission Text (left on desktop, top on mobile) -->
         <div>
           <h2
             class="text-3xl sm:text-4xl md:text-5xl tracking-wide font-extrabold beachday text-primary dark:text-accent mb-4"
@@ -17,23 +15,18 @@
           </h2>
 
           <p
-            class="text-lg sm:text-xl text-primary-600 dark:text-primary-300 mb-6 leading-relaxed"
+            class="text-lg sm:text-xl text-accent dark:text-secondary mb-6 leading-relaxed"
           >
-            We support <strong class="text-primary-600 dark:text-primary-400"
-              >Free Open Source Software</strong
-            >
+            We support <strong>Free Open Source Software</strong>
             in the
-            <strong class="text-primary-600 dark:text-primary-400"
-              >Minecraft Ecosystem</strong
-            >. They're not just individual passion projects: many
-            <strong class="text-primary-600 dark:text-primary-400"
-              >creators, multiplayer servers, and players</strong
-            >
+            <strong>Minecraft Ecosystem</strong>. They're not just individual
+            passion projects: many
+            <strong>creators, multiplayer servers, and players</strong>
             rely on them. We want to unite interests and empower project maintainers!
           </p>
 
           <p
-            class="text-lg sm:text-xl text-primary-600 dark:text-primary-300 mb-6 leading-relaxed"
+            class="text-lg sm:text-xl text-accent dark:text-secondary mb-6 leading-relaxed"
           >
             We are here to assist: with the help of our commercial partners, we
             provide the resources, governance, and infrastructure needed to
@@ -44,40 +37,39 @@
           </p>
         </div>
 
-        <!-- Right column: two separate stacked boxes (metric card + CTA card) -->
         <div class="flex flex-col gap-6">
-          <!-- Metric Card (non-clickable) -->
           <div
             class="w-full p-6 sm:p-8 bg-primary-50 dark:bg-gray-950 rounded-2xl shadow-lg flex flex-col items-center text-center transform hover:scale-105 transition-transform duration-300"
           >
             <p
-              class="text-5xl sm:text-7xl font-extrabold text-primary-700 dark:text-primary-400 mb-1 leading-none"
+              class="text-5xl sm:text-7xl font-extrabold text-accent dark:text-accent mb-1 leading-none"
             >
               35,000+
             </p>
             <p
-              class="text-base sm:text-lg font-semibold text-primary-700 dark:text-primary-300"
+              class="text-base sm:text-lg font-semibold text-accent dark:text-white"
             >
               Servers Powered
             </p>
             <p
-              class="text-base sm:text-lg font-medium text-primary-700 dark:text-primary-300"
+              class="text-base sm:text-lg font-medium text-accent dark:text-white"
             >
               by our Adopted Projects
             </p>
           </div>
 
-          <!-- CTA Card filling vertical space -->
           <a
             href="our-mission"
-            class="w-full h-full bg-gradient-to-r from-primary-600 to-primary-500 dark:from-primary-500 dark:to-primary-600 rounded-2xl shadow-lg flex flex-col justify-center items-center text-center hover:scale-105 hover:shadow-2xl transition-transform duration-300 p-6 sm:p-8"
+            class="w-full h-full bg-gradient-to-r from-primary to-background dark:from-accent dark:to-primary rounded-2xl shadow-lg flex flex-col justify-center items-center text-center hover:scale-105 hover:shadow-2xl transition-transform duration-300 p-6 sm:p-8"
           >
             <p
-              class="text-sm sm:text-base text-primary-100 mb-2 uppercase tracking-wide"
+              class="text-sm sm:text-base text-accent dark:text-secondary mb-2 uppercase"
             >
               Read more
             </p>
-            <p class="text-xl sm:text-3xl font-extrabold text-white">
+            <p
+              class="text-xl sm:text-3xl font-extrabold text-accent dark:text-secondary"
+            >
               Our Mission &rarr;
             </p>
           </a>
