@@ -6,8 +6,8 @@
     <p
       class="text-lg sm:text-xl text-primary-100 dark:text-primary-300 max-w-3xl mx-auto"
     >
-      These people help run Open Collaboration! This includes maintaining the infrastructure, communications, and
-      supporting all our adopted projects.
+      These people help run Open Collaboration! This includes maintaining the infrastructure, handling communications,
+      and supporting all our adopted projects.
     </p>
   </div>
 </section>
