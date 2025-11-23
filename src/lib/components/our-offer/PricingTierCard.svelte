@@ -29,7 +29,7 @@
   {#if tier.isMostPopular}
     <div class="absolute top-0 -translate-y-1/2 transform">
       <span
-        class="inline-flex items-center rounded-full bg-primary-100 dark:bg-primary-500  px-4 py-1 text-sm font-medium text-primary-700 dark:text-primary-100"
+        class="inline-flex items-center rounded-full bg-primary-100 dark:bg-primary-500 px-4 py-1 text-sm font-medium text-primary-700 dark:text-primary-100"
       >
         Most Popular
       </span>
@@ -46,7 +46,9 @@
       {#each tier.features as feature}
         <li class="flex items-start">
           <div class="flex-shrink-0">
-            <ShieldCheck class="h-5 w-5 text-primary-500 dark:text-primary-400" />
+            <ShieldCheck
+              class="h-5 w-5 text-primary-500 dark:text-primary-400"
+            />
           </div>
           <p class="ml-3 text-sm text-primary-700 dark:text-primary-200">
             {feature}
@@ -57,14 +59,14 @@
   </div>
   {#if tier.isMostPopular}
     <a
-      href="/join-us"
+      href="/contact"
       class="mt-10 block rounded-md bg-primary-600 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-primary-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-600 transition-colors"
     >
       {tier.ctaText}
     </a>
   {:else}
     <a
-      href="/join-us"
+      href="/contact"
       class="mt-10 block rounded-md bg-white dark:bg-gray-700 px-3.5 py-2.5 text-center text-sm font-semibold text-indigo-600 dark:text-indigo-300 shadow-sm ring-1 ring-inset ring-indigo-300 dark:ring-indigo-600 hover:bg-indigo-50 dark:hover:bg-indigo-900/50 transition-colors"
     >
       {tier.ctaText}
