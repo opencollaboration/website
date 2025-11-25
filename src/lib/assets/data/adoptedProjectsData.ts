@@ -12,13 +12,13 @@ export const adoptedProjects: Project[] = [
     description: "Bridges Minecraft Java and Bedrock: Bringing true cross-play to servers.",
     logo: "/resources/projects/geysermc_icon.png",
     link: "https://geysermc.org",
-    hasImage: false,
+    hasImage: true,
   },
   {
     name: "Cloudburst",
     description: "Maintains core libraries to power Minecraft: Bedrock Edition servers.",
     logo: "/resources/projects/cloudburst_icon.png",
     link: "https://cloudburstmc.org/",
-    hasImage: false,
+    hasImage: true,
   },
 ];

@@ -34,10 +34,14 @@
 
 <section class="bg-primary py-16 text-center dark:bg-gray-950 sm:py-24">
   <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-    <h1 class="mb-4 text-4xl font-extrabold tracking-wide text-accent sm:text-5xl">
+    <h1
+      class="mb-4 text-4xl font-extrabold tracking-wide text-accent sm:text-5xl"
+    >
       Adopted Projects
     </h1>
-    <p class="mx-auto max-w-3xl text-lg text-primary-100 dark:text-primary-300 sm:text-xl">
+    <p
+      class="mx-auto max-w-3xl text-lg text-primary-100 dark:text-primary-300 sm:text-xl"
+    >
       Free and open-source projects we actively support and contribute to
     </p>
   </div>
@@ -48,9 +52,9 @@
     <div class="grid gap-10 md:grid-cols-2">
       {#each projectsWithStatus as project}
         <div class="group/card relative h-full w-full">
-     
-          <div class="relative z-10 flex h-full flex-col rounded-xl bg-white p-8 shadow-lg transition-transform duration-300 ease-out group-hover/card:translate-x-1 group-hover/card:translate-y-1 dark:bg-gray-800">
-        
+          <div
+            class="relative z-10 flex h-full flex-col rounded-xl bg-white p-8 shadow-lg transition-transform duration-300 ease-out group-hover/card:translate-x-1 group-hover/card:translate-y-1 dark:bg-gray-800"
+          >
             <div class="ml-auto h-3 w-16 bg-primary dark:bg-accent"></div>
 
             <div class="mb-6 mt-4 flex h-24 items-center">
@@ -63,14 +67,18 @@
                   style="outline: none; border: none;"
                 />
               {:else}
-                <span class="text-3xl font-bold text-primary-600 dark:text-primary-400">
+                <span
+                  class="text-3xl font-bold text-primary-600 dark:text-primary-400"
+                >
                   {project.name}
                 </span>
               {/if}
             </div>
 
             <div class="flex-grow">
-              <h3 class="mb-3 text-2xl font-bold text-primary-900 dark:text-white">
+              <h3
+                class="mb-3 text-2xl font-bold text-primary-900 dark:text-white"
+              >
                 {project.name}
               </h3>
               <p class="mb-6 text-base text-primary-600 dark:text-primary-300">
@@ -102,18 +110,19 @@
             </div>
           </div>
 
-  
           <div
             aria-hidden="true"
             class="absolute -left-2 -top-2 z-0 h-full w-full rounded-xl bg-primary p-8 transition-all duration-300 ease-out group-hover/card:-left-4 group-hover/card:-top-4 dark:bg-accent"
           >
-            <div class="ml-auto mt-2 h-3 w-16 border border-gray-700 bg-gray-100 opacity-50"></div>
+            <div
+              class="ml-auto mt-2 h-3 w-16 border border-gray-700 bg-gray-100 opacity-50"
+            ></div>
 
             <div class="opacity-0">
-               <div class="mb-6 mt-4 h-24 w-full"></div>
-               
-               <h3 class="mb-3 text-2xl font-bold">{project.name}</h3>
-               <p class="mb-6 text-base">{project.description}</p>
+              <div class="mb-6 mt-4 h-24 w-full"></div>
+
+              <h3 class="mb-3 text-2xl font-bold">{project.name}</h3>
+              <p class="mb-6 text-base">{project.description}</p>
             </div>
           </div>
         </div>
