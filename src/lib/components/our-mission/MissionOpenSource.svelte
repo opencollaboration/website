@@ -1,91 +1,69 @@
-<section
-  class="py-16 sm:py-24 bg-gray-50 dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700"
->
-  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-    <h2
-      class="text-3xl sm:text-4xl font-extrabold text-primary-900 dark:text-white text-center mb-8 sm:mb-12"
-    >
-      Why Open Source?
+<script>
+  const benefits = [
+    {
+      title: "Innovative & Community Driven",
+      description: "Progress shaped by creators themselves.",
+    },
+    {
+      title: "Forkable & Extensible",
+      description: "Customization for unique needs.",
+    },
+    {
+      title: "Safe through Transparency",
+      description: "Full access to source code.",
+    },
+    {
+      title: "Accessible to All",
+      description: "Free to use and improve.",
+    },
+    {
+      title: "Educational",
+      description: "Encourages learning and best practices.",
+    },
+    {
+      title: "Sustainable Value",
+      description: "Better long-term returns than private tooling.",
+    },
+  ];
+</script>
+
+<section class="border-t border-gray-200 bg-gray-50 py-16 dark:border-gray-700 dark:bg-gray-800 sm:py-24">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <h2 class="mb-8 text-center text-3xl font-extrabold text-accent dark:text-white sm:mb-12 sm:text-4xl">
+      Why <span class="text-primary dark:text-accent">Open Source?</span>
     </h2>
-    <p
-      class="text-base sm:text-lg text-center text-primary-600 dark:text-primary-400 mb-8 sm:mb-10 max-w-3xl mx-auto"
-    >
+    
+    <p class="mx-auto mb-12 max-w-3xl text-center text-base text-accent dark:text-secondary sm:text-lg">
       Open Source is not easy — maintaining code, documentation, and community
       takes work. But the benefits are worth it:
     </p>
-    <ul class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
-      <li
-        class="p-6 bg-white dark:bg-gray-900 rounded-xl shadow hover:shadow-lg transition"
-      >
-        <h3
-          class="font-bold text-base sm:text-lg text-primary-600 dark:text-primary-400 mb-2"
-        >
-          Innovative & Community Driven
-        </h3>
-        <p class="text-sm sm:text-base text-primary-600 dark:text-primary-400">
-          Progress shaped by creators themselves.
-        </p>
-      </li>
-      <li
-        class="p-6 bg-white dark:bg-gray-900 rounded-xl shadow hover:shadow-lg transition"
-      >
-        <h3
-          class="font-bold text-base sm:text-lg text-primary-600 dark:text-primary-400 mb-2"
-        >
-          Forkable & Extensible
-        </h3>
-        <p class="text-sm sm:text-base text-primary-600 dark:text-primary-400">
-          Customization for unique needs.
-        </p>
-      </li>
-      <li
-        class="p-6 bg-white dark:bg-gray-900 rounded-xl shadow hover:shadow-lg transition"
-      >
-        <h3
-          class="font-bold text-base sm:text-lg text-primary-600 dark:text-primary-400 mb-2"
-        >
-          Safe through Transparency
-        </h3>
-        <p class="text-sm sm:text-base text-primary-600 dark:text-primary-400">
-          Full access to source code.
-        </p>
-      </li>
-      <li
-        class="p-6 bg-white dark:bg-gray-900 rounded-xl shadow hover:shadow-lg transition"
-      >
-        <h3
-          class="font-bold text-base sm:text-lg text-primary-600 dark:text-primary-400 mb-2"
-        >
-          Accessible to All
-        </h3>
-        <p class="text-sm sm:text-base text-primary-600 dark:text-primary-400">
-          Free to use and improve.
-        </p>
-      </li>
-      <li
-        class="p-6 bg-white dark:bg-gray-900 rounded-xl shadow hover:shadow-lg transition"
-      >
-        <h3
-          class="font-bold text-base sm:text-lg text-primary-600 dark:text-primary-400 mb-2"
-        >
-          Educational
-        </h3>
-        <p class="text-sm sm:text-base text-primary-600 dark:text-primary-400">
-          Encourages learning and best practices.
-        </p>
-      </li>
-      <li
-        class="p-6 bg-white dark:bg-gray-900 rounded-xl shadow hover:shadow-lg transition"
-      >
-        <h3
-          class="font-bold text-base sm:text-lg text-primary-600 dark:text-primary-400 mb-2"
-        >
-          Sustainable Value
-        </h3>
-        <p class="text-sm sm:text-base text-primary-600 dark:text-primary-400">
-          Better long-term returns than private tooling.
-        </p>
-      </li>
-    </ul>
+
+    <div class="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
+      {#each benefits as item}
+        <div class="group/card relative h-full w-full !h-[200px]">
+          <div class="relative z-10 flex h-full flex-col space-y-5 rounded-xl bg-white p-6 shadow-lg transition-transform duration-300 ease-out group-hover/card:translate-x-1 group-hover/card:translate-y-1 dark:bg-gray-900">
+            <div class="ml-auto h-2 w-12 bg-primary dark:bg-accent"></div>
+            
+            <div>
+              <h3 class="mb-2 text-lg font-bold text-accent dark:text-secondary">
+                {item.title}
+              </h3>
+              <p class="text-sm text-gray-500 dark:text-gray-400 sm:text-base">
+                {item.description}
+              </p>
+            </div>
+          </div>
+
+          <div aria-hidden="true" class="absolute -left-2 -top-2 z-0 h-full w-full space-y-5 rounded-xl bg-primary p-6 transition-all duration-300 ease-out group-hover/card:-left-4 group-hover/card:-top-4 dark:bg-accent">
+            <div class="ml-auto mt-1 h-2 w-12 border border-gray-700 bg-gray-100 opacity-50"></div>
+            
+            <div class="opacity-0">
+              <h3 class="mb-2 text-lg font-bold">{item.title}</h3>
+              <p class="text-sm sm:text-base">{item.description}</p>
+            </div>
+          </div>
+        </div>
+      {/each}
+    </div>
   </div>
 </section>

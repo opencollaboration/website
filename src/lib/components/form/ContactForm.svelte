@@ -96,7 +96,7 @@
     </div>
   {:else}
     <div
-      class="bg-white dark:bg-slate-800 rounded-3xl shadow-2xl flex flex-col md:flex-row overflow-hidden max-w-6xl w-full"
+      class="bg-white dark:bg-gray-900 rounded-3xl shadow-2xl flex flex-col md:flex-row overflow-hidden max-w-6xl w-full"
     >
       <div class="w-full md:w-1/2 p-8 sm:p-12">
         <h1
@@ -118,16 +118,16 @@
                     type={field.type}
                     placeholder={field.placeholder}
                     bind:value={formData[field.id]}
-                    class="w-full p-3 bg-gray-50 dark:bg-primary text-accent  border rounded-md focus:ring-2 focus:outline-none transition {errors[
+                    class="w-full p-3 bg-gray-50 dark:bg-primary text-accent border rounded-md focus:ring-2 focus:outline-none transition {errors[
                       field.id
                     ]
                       ? 'border-red-500'
-                      : 'border-gray-200 dark:border-accent'} focus:ring-primary"
+                      : 'border-gray-200 dark:border-transparent'} focus:ring-primary"
                   />
                 {:else if field.component === "select"}
                   <select
                     bind:value={formData[field.id]}
-                    class="w-full p-3 dark:bg-primary text-accent border border-gray-200 dark:border-accent rounded-md focus:ring-2 focus:ring-primary-500 focus:outline-none appearance-none"
+                    class="w-full p-3 bg-gray-50 dark:bg-primary text-accent border border-gray-200 dark:border-transparent rounded-md focus:outline-none appearance-none"
                   >
                     <option value="" disabled>{field.placeholder}</option>
                     {#each field.options as option}

@@ -32,54 +32,90 @@
   <title>Adopted Projects</title>
 </svelte:head>
 
-<section class="py-16 sm:py-24 bg-primary dark:bg-gray-950">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-    <h1 class="text-4xl sm:text-5xl font-extrabold mb-4 tracking-wide font-extrabold text-accent">
+<section class="bg-primary py-16 text-center dark:bg-gray-950 sm:py-24">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <h1 class="mb-4 text-4xl font-extrabold tracking-wide text-accent sm:text-5xl">
       Adopted Projects
     </h1>
-    <p
-      class="text-lg sm:text-xl text-primary-100 dark:text-primary-300 max-w-3xl mx-auto"
-    >
+    <p class="mx-auto max-w-3xl text-lg text-primary-100 dark:text-primary-300 sm:text-xl">
       Free and open-source projects we actively support and contribute to
     </p>
   </div>
 </section>
 
-<section class="py-16 sm:py-24 bg-gray-50 dark:bg-gray-900">
-  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="grid md:grid-cols-2 gap-8">
+<section class="bg-gray-50 py-16 dark:bg-gray-900 sm:py-24">
+  <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+    <div class="grid gap-10 md:grid-cols-2">
       {#each projectsWithStatus as project}
-        <div
-          class="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg hover:shadow-2xl transition"
-        >
-          <div class="mb-6 h-24 flex items-center">
-            {#if project.hasImage}
-              <img
-                src={project.logo}
-                alt={project.name}
-                class="max-h-full max-w-full object-contain"
-                loading="lazy"
-                style="outline: none; border: none;"
-              />
-            {:else}
-              <span
-                class="text-2xl font-bold text-primary-600 dark:text-primary-400"
-                >{project.name}</span
+        <div class="group/card relative h-full w-full">
+     
+          <div class="relative z-10 flex h-full flex-col rounded-xl bg-white p-8 shadow-lg transition-transform duration-300 ease-out group-hover/card:translate-x-1 group-hover/card:translate-y-1 dark:bg-gray-800">
+        
+            <div class="ml-auto h-3 w-16 bg-primary dark:bg-accent"></div>
+
+            <div class="mb-6 mt-4 flex h-24 items-center">
+              {#if project.hasImage}
+                <img
+                  src={project.logo}
+                  alt={project.name}
+                  class="max-h-full max-w-full object-contain"
+                  loading="lazy"
+                  style="outline: none; border: none;"
+                />
+              {:else}
+                <span class="text-3xl font-bold text-primary-600 dark:text-primary-400">
+                  {project.name}
+                </span>
+              {/if}
+            </div>
+
+            <div class="flex-grow">
+              <h3 class="mb-3 text-2xl font-bold text-primary-900 dark:text-white">
+                {project.name}
+              </h3>
+              <p class="mb-6 text-base text-primary-600 dark:text-primary-300">
+                {project.description}
+              </p>
+            </div>
+
+            <div class="mt-auto">
+              <a
+                href={project.link}
+                class="group flex items-center font-semibold text-primary-600 transition hover:text-primary-800 dark:text-primary-400 dark:hover:text-primary-300"
               >
-            {/if}
+                Learn More
+                <svg
+                  class="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M17 8l4 4m0 0l-4 4m4-4H3"
+                  />
+                </svg>
+              </a>
+            </div>
           </div>
-          <h3 class="text-2xl font-bold text-primary-900 dark:text-white mb-3">
-            {project.name}
-          </h3>
-          <p class="text-base text-primary-600 dark:text-primary-300 mb-6">
-            {project.description}
-          </p>
-          <a
-            href={project.link}
-            class="inline-flex items-center text-primary-600 dark:text-primary-400 hover:text-primary-800 dark:hover:text-primary-300 font-semibold transition"
+
+  
+          <div
+            aria-hidden="true"
+            class="absolute -left-2 -top-2 z-0 h-full w-full rounded-xl bg-primary p-8 transition-all duration-300 ease-out group-hover/card:-left-4 group-hover/card:-top-4 dark:bg-accent"
           >
-            Learn More →
-          </a>
+            <div class="ml-auto mt-2 h-3 w-16 border border-gray-700 bg-gray-100 opacity-50"></div>
+
+            <div class="opacity-0">
+               <div class="mb-6 mt-4 h-24 w-full"></div>
+               
+               <h3 class="mb-3 text-2xl font-bold">{project.name}</h3>
+               <p class="mb-6 text-base">{project.description}</p>
+            </div>
+          </div>
         </div>
       {/each}
     </div>
