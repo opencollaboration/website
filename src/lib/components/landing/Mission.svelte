@@ -1,10 +1,10 @@
 <section
   id="mission"
-  class="py-16 sm:py-24 bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800"
+  class="py-16 sm:py-24 bg-white border-b border-gray-200 dark:border-gray-800 dark:bg-gray-800" 
 >
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div
-      class="rounded-3xl bg-background dark:bg-gray-800 shadow-2xl p-8 sm:p-12 md:p-16 transition duration-300"
+      class="rounded-3xl bg-background dark:bg-gray-900 shadow-2xl p-8 sm:p-12 md:p-16 transition duration-300"
     >
       <div class="grid md:grid-cols-[2fr_1fr] gap-8 md:gap-12 items-start">
         <div>
