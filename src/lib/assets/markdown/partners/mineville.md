@@ -3,13 +3,13 @@ name: "Mineville"
 website: "https://mineville.org/"
 slug: "mineville"
 lightLogo:
-  path: "/resources/partnericons/mineville-light.png"
+  path: "/resources/partnericons/mineville.png"
   hue: 0
   inverted: false
 darkLogo:
-  path: "/resources/partnericons/mineville-dark.png"
+  path: "/resources/partnericons/mineville.png"
   hue: 0
   inverted: false
 ---
 
-Community-focused partner in Minecraft ecosystem
+Featured Minecraft: Bedrock Edition server
