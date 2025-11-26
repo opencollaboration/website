@@ -9,7 +9,7 @@ lightLogo:
 darkLogo:
   path: "/resources/partnericons/ziax-dark.svg"
   hue: 0
-  inverted: false
+  inverted: true
 ---
 
-Leading infrastructure and development partner
+Founding member - and makers of CubeCraft!
