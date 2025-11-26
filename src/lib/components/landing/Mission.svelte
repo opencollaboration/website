@@ -19,10 +19,10 @@
           >
             We support <strong>Free Open Source Software</strong>
             in the
-            <strong>Minecraft Ecosystem</strong>. They're not just individual
-            passion projects: many
+            <strong>Minecraft Ecosystem</strong>. They are not just individual
+            passion projects:
             <strong>creators, multiplayer servers, and players</strong>
-            rely on them. We want to unite interests and empower project maintainers!
+            rely on them. We want to unite interests and empower projects and the people behind them!
           </p>
 
           <p
@@ -33,7 +33,7 @@
             ensure
             <strong class="text-primary-600 dark:text-primary-400"
               >long-term success</strong
-            > for OSS projects that are fundamental to the ecosystem and its users.
+            > for OSS projects fundamental to the ecosystem and its users.
           </p>
         </div>
 
