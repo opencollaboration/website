@@ -18,7 +18,7 @@
 	];
   </script>
   
-  <section class="border-t border-gray-200 bg-gray-50 py-16 dark:border-gray-700 dark:bg-gray-800 sm:py-24">
+  <section class="border-t border-gray-200 bg-gray-200 py-16 dark:border-gray-700 dark:bg-gray-800 sm:py-24">
 	<div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
 	  <h2 class="mb-8 text-center text-3xl font-extrabold text-primary-900 dark:text-white sm:mb-12 sm:text-4xl">
 		How We help

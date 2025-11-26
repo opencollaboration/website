@@ -11,7 +11,7 @@
   }
 
   let navItems: NavItem[] = [
-    { name: "Our Mission", href: "/our_mission" },
+    { name: "Our Mission", href: "/our-mission" },
     { name: "Adopted Projects", href: "/adopted-projects" },
     { name: "Offers", href: "/our-offer" },
     { name: "Our Team", href: "/our-team" },
@@ -34,10 +34,9 @@
   ];
 </script>
 
-<footer class="bg-background dark:bg-gray-950 text-white py-12" id="contact">
+<footer class="bg-gray-300 dark:bg-gray-950 text-white py-12" id="contact">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="grid grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8">
-      <!-- Navigation Links -->
       <div>
         <h4
           class="text-base text-accent dark:text-accent sm:text-lg font-semibold mb-4"
@@ -59,8 +58,6 @@
           {/each}
         </ul>
       </div>
-
-      <!-- Info Links -->
       <div>
         <h4
           class="text-base sm:text-lg text-accent dark:text-accent font-semibold mb-4"
@@ -88,7 +85,6 @@
         </ul>
       </div>
 
-      <!-- Contact & Social -->
       <div class="col-span-2 md:col-span-1">
         <h4
           class="text-base sm:text-lg text-accent dark:text-accent font-semibold mb-4"

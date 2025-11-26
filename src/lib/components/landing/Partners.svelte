@@ -37,7 +37,7 @@
 </script>
 
 <section
-  class="py-16 sm:py-24 bg-gray-50 dark:bg-gray-900 border-b border-gray-200 dark:border-gray-700"
+  class="py-16 sm:py-24 bg-background dark:bg-gray-900 border-b border-gray-200 dark:border-gray-700"
 >
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="text-center mb-12">
