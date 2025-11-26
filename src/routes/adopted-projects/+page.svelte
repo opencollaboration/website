@@ -47,7 +47,7 @@
   </div>
 </section>
 
-<section class="bg-gray-50 py-16 dark:bg-gray-900 sm:py-24">
+<section class="bg-background  py-16 dark:bg-gray-900 sm:py-24">
   <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
     <div class="grid gap-10 md:grid-cols-2">
       {#each projectsWithStatus as project}

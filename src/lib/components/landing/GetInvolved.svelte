@@ -11,12 +11,12 @@
       title: "Contributors & Maintainers",
       description: "Find out how we support projects and how you can benefit.",
       linkText: "See what we can do",
-      href: "/our-team",
+      href: "/our-mission",
     },
   ];
 </script>
 
-<section id="offers" class="py-16 bg-gray-100 dark:bg-gray-800 sm:py-24">
+<section id="offers" class="py-16 bg-gray-200 dark:bg-gray-800 sm:py-24">
   <div class="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
     <h2
       class="mb-6 text-3xl font-extrabold text-primary-900 dark:text-white sm:text-4xl"
