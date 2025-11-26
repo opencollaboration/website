@@ -21,21 +21,11 @@
   <p class="mt-4 text-base leading-7 text-primary-600 dark:text-primary-300">
     {content.description}
   </p>
-  <form class="mt-8 flex gap-x-4 max-w-md mx-auto">
-    <label for="email-address" class="sr-only">Email address</label>
-    <input
-      id="email-address"
-      name="email"
-      type="email"
-      autocomplete="email"
-      required
-      class="min-w-0 flex-auto rounded-md border-0 bg-white dark:bg-gray-800 px-3.5 py-2 text-primary-900 dark:text-white shadow-sm ring-1 ring-inset ring-gray-300 dark:ring-gray-600 focus:ring-2 focus:ring-inset focus:ring-primary-500 sm:text-sm sm:leading-6"
-      placeholder="Enter your email"
-    />
-    <button
-      type="submit"
-      class="flex-none rounded-md bg-primary dark:bg-accent px-3.5 py-2.5 text-sm font-semibold text-accent dark:text-primary shadow-sm hover:bg-primary-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-600"
-      >Notify Me
-    </button>
-  </form>
+  <a
+          href="/contact"
+          class="mt-8 block w-full sm:w-auto sm:min-w-[240px] mx-auto rounded-lg bg-primary dark:bg-accent px-6 py-3 text-base font-semibold text-accent dark:text-primary shadow-sm hover:bg-primary-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-600"
+  >
+    Contact Us
+  </a>
+
 </div>

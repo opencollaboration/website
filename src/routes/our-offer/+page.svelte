@@ -67,16 +67,17 @@
           title: "Up next: Server hosting providers 👀",
           description: "Let's work together to make things simpler. Contact us to be first!",
         },
-      },
-      {
-        id: "marketplace",
-        label: "Marketplace",
-        type: "comingSoon",
-        content: {
-          title: "Marketplace is Launching Soon",
-          description: "A dedicated place to buy and sell plugins, configurations, and services for your server. Get notified when we go live.",
-        },
-      },
+      }
+      //},
+      //{
+      //  id: "marketplace",
+      //  label: "Marketplace",
+      //  type: "comingSoon",
+      //  content: {
+      //    title: "Marketplace is Launching Soon",
+      //    description: "Support OSS tooling that helps you create faster and more efficient. Get notified when we go live.",
+      //  },
+      //},
     ];
   
     let activeTab = tabsData[0].id;
