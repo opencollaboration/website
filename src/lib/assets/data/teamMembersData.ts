@@ -13,10 +13,10 @@ export const teamMembers: TeamMember[] = [
         name: 'Chris',
         role: 'Project Lead',
         description:
-            "Hey! I\'m Chris! Currently leading Open Collaboration, maintaining Geyser, and studying. Probably on a train " +
-            "while you're reading this :)",
+            "I\'m Chris! Currently leading Open Collaboration, maintaining Geyser, and studying. Passionate about OSS " +
+            "and coding in Java.",
         image: '/resources/team/chris_profile.jpg',
-        background: '/resources/team/profile_bg.png',
+        background: '/resources/team/chris_profile_bg.png',
         hasImage: false
     },
     {
@@ -42,7 +42,7 @@ export const teamMembers: TeamMember[] = [
         role: '',
         description:
             '',
-        image: '/resources/team/owen_profile.png',
+        image: '/resources/team/lukeey_profile.png',
         background: '/resources/team/profile_bg.png',
         hasImage: false
     },
@@ -51,7 +51,7 @@ export const teamMembers: TeamMember[] = [
         role: '',
         description:
             '',
-        image: '/resources/team/owen_profile.png',
+        image: '/resources/team/zed_profile.png',
         background: '/resources/team/profile_bg.png',
         hasImage: false
     }
