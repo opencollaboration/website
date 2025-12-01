@@ -5,7 +5,7 @@
   <div class="absolute inset-0 bg-black/30 dark:bg-black/60"></div>
 
   <div
-    class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 flex items-center justify-center flex-col"
+    class="max-w-7xl pt-16 mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 flex items-center justify-center flex-col"
   >
     <img
       src="resources/ocp_logo.png"

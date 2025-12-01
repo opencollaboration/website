@@ -95,7 +95,7 @@
       >
     </div>
   {:else}
-    <div class="group/card relative w-full max-w-6xl rounded-3xl">
+    <div class="group/card relative w-full max-w-6xl rounded-3xl mt-10">
       <div
         class="relative z-10 bg-white dark:bg-gray-900 rounded-3xl shadow-2xl flex flex-col md:flex-row overflow-hidden w-full"
       >
