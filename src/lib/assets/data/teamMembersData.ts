@@ -43,16 +43,16 @@ export const teamMembers: TeamMember[] = [
         description:
             '',
         image: '/resources/team/luke_profile.png',
-        background: '/resources/team/profile_bg.png',
+        background: '/resources/upbg3.png',
         hasImage: false
     },
     {
         name: 'Zed',
-        role: '',
+        role: 'Managing Director, Ziax',
         description:
             '',
         image: '/resources/team/zed_profile.png',
-        background: '/resources/team/profile_bg.png',
+        background: '/resources/team/zed_profile_bg.png',
         hasImage: false
     }
 ];
