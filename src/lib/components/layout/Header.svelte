@@ -41,8 +41,7 @@
           alt="Open Collaboration Logo"
           class="h-10 w-auto"
         />
-        <span class="text-sm lg:text-2xl beachday text-primary dark:text-accent"
-          >Open Collaboration</span
+        <span class="text-sm lg:text-2xl beachday text-primary dark:text-accent">Open Collaboration</span
         >
       </a>
 
@@ -67,7 +66,7 @@
           onclick={toggleMobileMenu}
           aria-label="Toggle navigation menu"
           aria-expanded={mobileMenuOpen}
-          class="p-2 rounded-lg text-primary-500 dark:text-primary-300 hover:text-primary-700 dark:hover:text-white focus:outline-none focus:ring-2 focus:ring-primary-500"
+          class="p-2 rounded-lg text-white hover:text-primary-700 dark:hover:text-white focus:outline-none focus:ring-2 focus:ring-primary-500"
         >
           <IconHamburger />
         </button>
@@ -81,7 +80,7 @@
           <a
             href={item.href}
             onclick={handleNavClick}
-            class="block px-4 py-3 text-sm font-medium text-primary-600 dark:text-primary-300 hover:text-primary-600 dark:hover:text-primary-400 hover:bg-gray-100 dark:hover:bg-gray-700 rounded transition duration-150"
+            class="block px-4 py-3 text-sm font-medium text-white hover:text-black dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-700 rounded transition duration-150"
           >
             {item.name}
           </a>
