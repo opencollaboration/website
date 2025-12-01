@@ -45,6 +45,7 @@
 
   let errors = {};
   let submitted = false;
+  let submitError = false;
 
   const validateForm = () => {
     const newErrors = {};
@@ -63,8 +64,28 @@
 
   const handleSubmit = () => {
     if (validateForm()) {
-      console.log("Form submitted successfully:", formData);
-      submitted = true;
+      fetch("https://formsubmit.co/ajax/contact@opencollaboration.dev", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify(formData),
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          if (data.success !== "false") {
+            console.log("Form submitted successfuly", data);
+            submitted = true;
+          } else {
+            console.log("Error submitting form", data);
+            submitError = true;
+          }
+        })
+        .catch((error) => {
+          console.error("Error submitting form", error);
+          submitError = true;
+        });
     } else {
       console.log("Form has validation errors:", errors);
     }
@@ -110,6 +131,17 @@
           >
             Want to become a part of the Open Collaboration Project? Let's talk!
           </p>
+
+          {#if submitError}
+            <div
+              class="mb-4 bg-red-500 text-white px-4 py-2 rounded-sm text-sm"
+            >
+              An error occurred while submitting the form. Please try again or <a
+                href="mailto:contact@opencollaboration.dev">email us directly</a
+              >.
+            </div>
+          {/if}
+
           <form on:submit|preventDefault={handleSubmit} novalidate>
             <div class="space-y-6">
               {#each formFields as field (field.id)}
