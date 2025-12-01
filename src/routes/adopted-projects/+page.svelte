@@ -33,7 +33,7 @@
 </svelte:head>
 
 <section class="bg-primary py-16 text-center dark:bg-gray-950 sm:py-24">
-  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+  <div class="mx-auto pt-16 max-w-7xl px-4 sm:px-6 lg:px-8">
     <h1
       class="mb-4 text-4xl font-extrabold tracking-wide text-accent sm:text-5xl"
     >
