@@ -114,11 +114,11 @@
       <p class="text-xs sm:text-sm">
         &copy; {new Date().getFullYear()} Open Collaboration. All rights reserved.
       </p>
-      <p class="text-xs sm:text-sm mt-2">
+      <p class="text-xs sm:text-sm mt-2 text-gray-500">
         This website is not an official Minecraft website and is not associated
         with Mojang Studios or Microsoft.
       </p>
-      <p class="text-xs sm:text-sm mt-2">
+      <p class="text-xs sm:text-sm mt-2 text-gray-500">
         All product and company names are trademarks or registered trademarks of
         their respective holders.
       </p>

@@ -38,11 +38,11 @@ export const teamMembers: TeamMember[] = [
         hasImage: false
     },
     {
-        name: 'Lukeeey',
+        name: 'Luke',
         role: '',
         description:
             '',
-        image: '/resources/team/lukeey_profile.png',
+        image: '/resources/team/luke_profile.png',
         background: '/resources/team/profile_bg.png',
         hasImage: false
     },
