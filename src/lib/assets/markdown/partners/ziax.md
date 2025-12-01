@@ -7,9 +7,7 @@ lightLogo:
   hue: 0
   inverted: false
 darkLogo:
-  path: "/resources/partnericons/ziax-dark.svg"
-  hue: 0
-  inverted: true
+  path: "/resources/partnericons/ziax-dark.png"
 ---
 
 Founding member - and makers of CubeCraft!
