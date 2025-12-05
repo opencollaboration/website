@@ -10,6 +10,15 @@ interface TeamMember {
 
 export const teamMembers: TeamMember[] = [
     {
+        name: 'Zed',
+        role: 'Managing Director, Ziax',
+        description:
+            '',
+        image: '/resources/team/zed_profile.png',
+        background: '/resources/team/zed_profile_bg.png',
+        hasImage: false
+    },
+    {
         name: 'Chris',
         role: 'Project Lead',
         description:
@@ -34,7 +43,7 @@ export const teamMembers: TeamMember[] = [
         description:
             '',
         image: '/resources/team/redned_profile.png',
-        background: '/resources/team/profile_bg.png',
+        background: '/resources/team/redned_profile_bg.png',
         hasImage: false
     },
     {
@@ -44,15 +53,6 @@ export const teamMembers: TeamMember[] = [
             '',
         image: '/resources/team/luke_profile.png',
         background: '/resources/upbg3.png',
-        hasImage: false
-    },
-    {
-        name: 'Zed',
-        role: 'Managing Director, Ziax',
-        description:
-            '',
-        image: '/resources/team/zed_profile.png',
-        background: '/resources/team/zed_profile_bg.png',
         hasImage: false
     }
 ];

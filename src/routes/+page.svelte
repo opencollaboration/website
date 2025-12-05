@@ -13,7 +13,7 @@
 </svelte:head>
 
 <Hero />
-<NewsTicker articles={data.articles} />
+<!-- <NewsTicker articles={data.articles} /> -->
 <Mission />
 <Partners partners={data.partners} />
 <GetInvolved />
