@@ -24,7 +24,7 @@
       name: "contact@opencollaboration.dev",
     },
     {
-      href: "https://x.com/opencollaboration",
+      href: "https://x.com/opencollabdev",
       name: "X (formerly twitter)",
     },
     {
