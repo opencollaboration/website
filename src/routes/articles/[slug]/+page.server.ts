@@ -1,5 +1,5 @@
 import { error } from "@sveltejs/kit";
-import { readFileSync } from "node:fs";
+import { readFileSync, readdirSync } from "node:fs";
 import path from "node:path";
 import frontMatter from "front-matter";
 import { marked } from "marked";
@@ -28,4 +28,12 @@ export function load({ params }) {
     console.error(`Could not load article for slug: ${slug}`, err);
     throw error(404, "Article not found");
   }
+}
+
+export function entries() {
+  return readdirSync(articlesDir)
+    .filter((file: any) => file.endsWith(".md"))
+    .map((file: any) => ({
+      slug: file.replace(".md", "")
+    }));
 }
