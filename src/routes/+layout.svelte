@@ -9,7 +9,7 @@
 </script>
 
 <svelte:head>
-  <meta name="description" content="A description of my awesome Svelte site." />
+  <meta name="description" content="Open Collaboration is a set of projects working to create high quality open source software for gaming." />
 
   <link
     rel="apple-touch-icon"
