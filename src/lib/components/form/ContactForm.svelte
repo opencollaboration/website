@@ -223,7 +223,7 @@
                 <span class="text-lg"> X</span>
                 <div>
                   <span class="font-bold">Twitter / X</span><br
-                  />@opencollaboration
+                  />@opencollabdev
                 </div>
               </div>
             </a>
