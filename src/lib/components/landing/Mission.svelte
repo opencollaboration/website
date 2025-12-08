@@ -9,7 +9,7 @@
       <div class="grid md:grid-cols-[2fr_1fr] gap-8 md:gap-12 items-start">
         <div>
           <h2
-            class="text-3xl sm:text-4xl md:text-5xl tracking-wide font-extrabold beachday text-primary dark:text-accent mb-4"
+            class="text-3xl sm:text-4xl md:text-5xl tracking-wide font-extrabold text-primary dark:text-accent mb-4"
           >
             Our Mission
           </h2>

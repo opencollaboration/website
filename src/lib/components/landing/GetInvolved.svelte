@@ -22,7 +22,7 @@
       class="mb-6 text-3xl font-extrabold text-primary-900 dark:text-white sm:text-4xl"
     >
       Get <span
-        class="beachday text-primary dark:text-accent font-extrabold tracking-wide"
+        class="text-primary dark:text-accent font-extrabold tracking-wide"
       >
         Involved!
       </span>

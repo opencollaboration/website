@@ -41,7 +41,7 @@
           alt="Open Collaboration Logo"
           class="h-10 w-auto"
         />
-        <span class="text-sm lg:text-2xl beachday text-primary dark:text-accent">Open Collaboration</span
+        <span class="text-sm lg:text-2xl text-primary dark:text-accent">Open Collaboration</span
         >
       </a>
 

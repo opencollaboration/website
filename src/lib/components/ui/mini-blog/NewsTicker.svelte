@@ -28,7 +28,7 @@
 <section class="bg-background dark:bg-gray-900 py-12 sm:py-16">
   <div class="max-w-7xl mx-auto px-4">
     <h2
-      class="text-3xl sm:text-4xl md:text-5xl font-bold text-center beachday text-primary dark:text-accent mb-8"
+      class="text-3xl sm:text-4xl md:text-5xl font-bold text-center text-primary dark:text-accent mb-8"
     >
       Latest Updates
     </h2>

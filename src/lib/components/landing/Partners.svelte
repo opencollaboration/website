@@ -46,7 +46,7 @@
       >
         Backed by our
         <span
-          class="tracking-wide font-extrabold beachday text-primary dark:text-accent"
+          class="tracking-wide font-extrabold text-primary dark:text-accent"
         >
           Partners
         </span>

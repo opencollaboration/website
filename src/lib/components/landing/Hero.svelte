@@ -19,9 +19,9 @@
       <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-6">
         Building Minecraft <span>Open Source Software</span>.
       </h1>
-      <p class="text-xl sm:text-2xl lg:text-4xl font-light mb-12">
-        Together with you?
-      </p>
+      <!-- <p class="text-xl sm:text-2xl lg:text-4xl font-light mb-12">
+        Together, with the community.
+      </p> -->
     </div>
   </div>
 </section>

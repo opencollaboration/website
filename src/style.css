@@ -4,18 +4,6 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
-@font-face {
-  font-family: "BeachDay";
-  src: url("/fonts/beachday.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
-.beachday {
-  font-family: "BeachDay", sans-serif;
-}
-
 /* ------------ Hero Section styles */
 .hero-background {
   background-image: url("/resources/upbg3.png");
