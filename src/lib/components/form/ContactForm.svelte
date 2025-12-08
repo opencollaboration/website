@@ -112,7 +112,7 @@
         class="my-2 bg-primary-500 py-2 px-4 cursor-pointer"
         on:click={() => {
           goto("/adopted-projects");
-        }}>Go to Adopted Projects</button
+        }}>Go to adopted projects</button
       >
     </div>
   {:else}

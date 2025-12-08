@@ -15,7 +15,7 @@
     { name: "Adopted Projects", href: "/adopted-projects" },
     { name: "Offers", href: "/our-offer" },
     { name: "Our Team", href: "/our-team" },
-    { name: "Chat with us!", href: "/contact" },
+    { name: "Chat With Us!", href: "/contact" },
   ];
 
   let socials: SocialItem[] = [

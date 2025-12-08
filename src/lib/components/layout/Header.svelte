@@ -12,7 +12,7 @@
     { name: "Adopted Projects", href: "/adopted-projects" },
     { name: "Offers", href: "/our-offer" },
     { name: "Our Team", href: "/our-team" },
-    { name: "Chat with us!", href: "/contact" },
+    { name: "Chat With Us!", href: "/contact" },
   ];
 
   let mobileMenuOpen = $state(false);
@@ -34,15 +34,14 @@
       <!-- Logo/Title -->
       <a
         href="/"
-        class="flex items-center space-x-2 text-2xl font-bold tracking-wider"
+        class="flex items-center space-x-2 text-2xl font-bold"
       >
         <img
           src="/resources/ocp_icon.png"
           alt="Open Collaboration Logo"
           class="h-10 w-auto"
         />
-        <span class="text-sm lg:text-2xl text-primary dark:text-accent">Open Collaboration</span
-        >
+        <span class="text-sm lg:text-xl text-primary dark:text-accent">Open Collaboration</span>
       </a>
 
       <!-- Desktop Navigation & Toggle -->

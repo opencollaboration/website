@@ -44,7 +44,7 @@
             <p
               class="text-5xl sm:text-7xl font-extrabold text-accent dark:text-accent mb-1 leading-none"
             >
-              35,000+
+              48,000+
             </p>
             <p
               class="text-base sm:text-lg font-semibold text-accent dark:text-white"

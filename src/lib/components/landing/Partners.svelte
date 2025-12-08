@@ -42,7 +42,7 @@
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="text-center mb-12">
       <h3
-        class="text-3xl sm:text-4xl font-extrabold tracking-wider text-primary-900 dark:text-white mb-4"
+        class="text-3xl sm:text-4xl font-extrabold text-primary-900 dark:text-white mb-4"
       >
         Backed by our
         <span
