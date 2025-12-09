@@ -1,5 +1,5 @@
 ---
-name: "OPSucht"
+name: "OPSUCHT"
 website: "https://www.opsucht.net/"
 slug: "opsucht"
 lightLogo:
