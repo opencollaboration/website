@@ -116,8 +116,5 @@
   </div>
 </section>
 
-<section class="bg-background dark:bg-gray-900">
-  {#each sections as section}
-    <ProjectSection {...section} />
-  {/each}
-</section>
+<ProjectSection {...sections[0]} index={0} />
+<ProjectSection {...sections[1]} index={1} />

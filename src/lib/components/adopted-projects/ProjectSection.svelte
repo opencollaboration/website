@@ -10,10 +10,13 @@
     export let githubUrl: string;
     export let websiteUrl: string;
     export let twitterUrl: string;
+    export let index: number = 0;
 </script>
 
 <section
-    class="border-t border-gray-200 bg-gray-200 py-6 dark:border-gray-700 dark:bg-gray-800 sm:py-10"
+    class={`border-t border-gray-200 py-6 sm:py-10
+        ${index % 2 === 0 ? 'bg-background dark:bg-gray-800' : 'bg-gray-200 dark:bg-gray-800'} 
+        ${index % 2 === 0 ? 'dark:border-gray-700' : 'border-gray-200 dark:border-gray-700'}`}
 >
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div class="mb-4 mt-4 flex h-24 items-center">
@@ -48,7 +51,7 @@
             {/each}
         </div>
 
-        <a href={githubUrl} class="text-sm tracking-wide text-gray-300">
+        <a href={githubUrl} class="text-sm tracking-wide text-gray-600 dark:text-gray-300">
             View all projects on GitHub
         </a>
     </div>
