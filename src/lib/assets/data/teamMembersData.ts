@@ -5,7 +5,6 @@ interface TeamMember {
     image: string;
     hasImage: boolean;
     background?: string;
-
 }
 
 export const teamMembers: TeamMember[] = [
