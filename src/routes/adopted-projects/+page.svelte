@@ -64,12 +64,12 @@
       commits: "150+",
     },
     {
-      title: "Server",
+      title: "Nukkit",
       description:
-        "Cloudburst is a server software for Minecraft: Bedrock Edition.",
-      githubUrl: "https://github.com/CloudburstMC/Cloudburst",
-      stars: "5000",
-      commits: "8000",
+        "Nukkit is a server software for Minecraft: Bedrock Edition.",
+      githubUrl: "https://github.com/CloudburstMC/Nukkit",
+      stars: "1.3k+",
+      commits: "4.0k+",
     },
   ];
 
