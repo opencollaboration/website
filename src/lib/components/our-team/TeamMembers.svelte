@@ -10,6 +10,9 @@
 		{ light: '#6366f1', dark: '#818cf8' }
 	];
 
+	/**
+     * @param {number} index
+     */
 	function getColor(index) {
 		return cardColors[index % cardColors.length];
 	}

@@ -12,7 +12,7 @@ export const teamMembers: TeamMember[] = [
         name: 'Chris',
         role: 'Project Lead',
         description:
-            "I\'m Chris! Currently leading Open Collaboration, maintaining Geyser, and studying. Passionate about OSS " +
+            "I'm Chris! Currently leading Open Collaboration, maintaining Geyser, and studying. Passionate about OSS " +
             "and coding in Java.",
         image: '/resources/team/chris_profile.jpg',
         background: '/resources/team/chris_profile_bg.png',
@@ -25,6 +25,15 @@ export const teamMembers: TeamMember[] = [
             'Ziax provides strategic guidance, funding and operational support to Open Collaboration.',
         image: '/resources/team/zed_profile.png',
         background: '/resources/team/zed_profile_bg.png',
+        hasImage: false
+    },
+    {
+        name: 'Auri',
+        role: 'Community & Operations Coordinator',
+        description:
+            "I'm Auri! I'm a developer at Geyser, protocol developer at CubeCraft and also help keep Open Collaboration running.",
+        image: '/resources/team/auri_profile.png',
+        background: '/resources/team/auri_profile_bg.png',
         hasImage: false
     },
     {
