@@ -72,7 +72,7 @@
 
     <div class="flex justify-center items-center gap-4 mt-12">
       <button
-        on:click={prevPage}
+        onclick={prevPage}
         disabled={currentPage === 1}
         class="p-2 rounded-full bg-gray-200 dark:bg-slate-700 text-primary-800 dark:text-white disabled:opacity-50 disabled:cursor-not-allowed hover:bg-gray-300 dark:hover:bg-slate-600 transition-colors"
         aria-label="Previous Page"
@@ -81,7 +81,7 @@
       </button>
 
       <button
-        on:click={nextPage}
+        onclick={nextPage}
         disabled={currentPage === totalPages}
         class="p-2 rounded-full bg-gray-200 dark:bg-slate-700 text-primary-800 dark:text-white disabled:opacity-50 disabled:cursor-not-allowed hover:bg-gray-300 dark:hover:bg-slate-600 transition-colors"
         aria-label="Next Page"

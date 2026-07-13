@@ -1,0 +1,2 @@
+<img class="absolute h-[1.2rem] w-[1.2rem] scale-0 transition-all dark:scale-100" style:filter="invert(1)" alt="Modrinth Logo" src="resources/modrinth.svg" />
+<img class="h-[1.2rem] w-[1.2rem] scale-100 transition-all dark:scale-0" alt="Modrinth Logo" src="resources/modrinth.svg" />

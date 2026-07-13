@@ -39,12 +39,12 @@
 
         <div class="flex flex-col gap-6">
           <div
-            class="w-full p-6 sm:p-8 bg-primary-50 dark:bg-gray-950 rounded-2xl shadow-lg flex flex-col items-center text-center transform hover:scale-105 transition-transform duration-300"
+            class="w-full p-6 sm:p-8 bg-gray-300 dark:bg-gray-950 rounded-2xl shadow-lg flex flex-col items-center text-center transform hover:scale-105 transition-transform duration-300"
           >
             <p
               class="text-5xl sm:text-7xl font-extrabold text-accent dark:text-accent mb-1 leading-none"
             >
-              48,000+
+              50,000+
             </p>
             <p
               class="text-base sm:text-lg font-semibold text-accent dark:text-white"
@@ -60,7 +60,7 @@
 
           <a
             href="our-mission"
-            class="w-full h-full bg-gradient-to-r from-primary to-background dark:from-accent dark:to-primary rounded-2xl shadow-lg flex flex-col justify-center items-center text-center hover:scale-105 hover:shadow-2xl transition-transform duration-300 p-6 sm:p-8"
+            class="w-full h-full bg-gray-300 dark:bg-gray-950 rounded-2xl shadow-lg flex flex-col justify-center items-center text-center hover:scale-105 hover:shadow-2xl transition-transform duration-300 p-6 sm:p-8"
           >
             <p
               class="text-sm sm:text-base text-accent dark:text-secondary mb-2 uppercase"

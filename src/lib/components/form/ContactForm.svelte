@@ -102,18 +102,13 @@
     >
       <h1 class="text-4xl lg:text-6xl font-bold">Thank You!</h1>
       <span>
-        <Check class="h-48 w-48 text-green-500" />
+        <Check class="h-18 w-18 text-green-500" />
       </span>
       <p class="max-w-2xl mx-10 text-center">
         Thanks for contacting us!. We will get back to you shortly, in the
         meantime: Check our adopted projects!
       </p>
-      <button
-        class="my-2 bg-primary-500 py-2 px-4 cursor-pointer"
-        on:click={() => {
-          goto("/adopted-projects");
-        }}>Go to adopted projects</button
-      >
+      <a class="my-2 py-2 px-4 cursor-pointer" href="/adopted-projects">Go to adopted projects</a>
     </div>
   {:else}
     <div class="group/card relative w-full max-w-6xl rounded-3xl mt-10">
