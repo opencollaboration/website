@@ -2,14 +2,16 @@
     import { GithubIcon, GlobeIcon, TwitterIcon } from "@lucide/svelte";
     import ProjectCard from "./ProjectCard.svelte";
     import SocialIcon from "./SocialIcon.svelte";
+    import ModrinthIcon from "../ui/icons/ModrinthIcon.svelte";
 
     export let logo: string;
     export let title: string;
     export let description: string;
     export let projects: any[];
     export let githubUrl: string;
-    export let websiteUrl: string;
-    export let twitterUrl: string;
+    export let websiteUrl: string | undefined = undefined;
+    export let twitterUrl: string | undefined = undefined;
+    export let modrinthUrl: string | undefined = undefined;
     export let index: number = 0;
 </script>
 
@@ -34,15 +36,30 @@
             >
                 {title}
             </h3>
-            <p class="mb-4 text-base text-primary-600 dark:text-primary-300">
+            <p class="mb-4 text-base text-gray-500 dark:text-gray-300">
                 {description}
             </p>
         </div>
 
         <div class="flex gap-4 mb-10">
-            <SocialIcon href={websiteUrl} label="Website" Icon={GlobeIcon} />
-            <SocialIcon href={twitterUrl} label="X (Twitter)" Icon={TwitterIcon} />
-            <SocialIcon href={githubUrl} label="GitHub" Icon={GithubIcon} />
+            <SocialIcon href={githubUrl} label="GitHub">
+                <GithubIcon />
+            </SocialIcon>
+            {#if websiteUrl !== undefined}
+	            <SocialIcon href={websiteUrl} label="Website">
+                    <GlobeIcon />
+                </SocialIcon>
+            {/if}
+            {#if modrinthUrl !== undefined}
+                <SocialIcon href={modrinthUrl} label="Modrinth">
+                    <ModrinthIcon />
+                </SocialIcon>
+            {/if}
+            {#if twitterUrl !== undefined}
+                <SocialIcon href={twitterUrl} label="X (Twitter)">
+                    <TwitterIcon />
+                </SocialIcon>
+            {/if}
         </div>
 
         <div class="grid gap-10 sm:grid-cols-2 lg:grid-cols-3 mb-6">
@@ -50,9 +67,5 @@
                 <ProjectCard {item} />
             {/each}
         </div>
-
-        <a href={githubUrl} class="text-sm tracking-wide text-gray-600 dark:text-gray-300">
-            View all projects on GitHub
-        </a>
     </div>
 </section>
