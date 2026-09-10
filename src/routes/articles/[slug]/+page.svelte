@@ -4,8 +4,6 @@
   let { data }: { data: PageData } = $props();
 </script>
 
-<!--
-
 <svelte:head>
   <title>{data.post.title}</title>
   <meta name="description" content={data.post.description} />
@@ -42,27 +40,5 @@
     <div class="prose dark:prose-invert prose-lg max-w-none">
       {@html data.post.content}
     </div>
-  </article>
-</div>
-
--->
-
-<svelte:head>
-  <title>Coming soon!</title>
-  <meta name="description" content="We're working on this... please be patient." />
-</svelte:head>
-
-<div class="bg-white dark:bg-gray-900 py-8 mt-20">
-  <article class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-    <header class="mb-8">
-      <h1
-        class="text-4xl font-extrabold text-primary-900 dark:text-white leading-tight mb-2"
-      >
-        Coming soon!
-      </h1>
-      <p class="text-lg text-primary-500 dark:text-primary-400">
-        We're working on this... please be patient.
-      </p>
-    </header>
   </article>
 </div>

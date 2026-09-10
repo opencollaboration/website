@@ -16,6 +16,9 @@ export function load({ params }) {
 
     const { attributes, body } = frontMatter(fileContent);
 
+    console.log(attributes);
+    if (attributes.disabled === "true") throw error(404, "Article not found");
+
     const content = marked.parse(body);
 
     return {

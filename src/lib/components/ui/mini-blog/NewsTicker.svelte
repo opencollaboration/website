@@ -3,7 +3,6 @@
   import { fly, fade } from "svelte/transition";
 
   let { articles } = $props();
-  console.log(articles);
   const itemsPerPage = 4;
   let currentPage = $state(1);
 
