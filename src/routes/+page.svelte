@@ -13,7 +13,9 @@
 </svelte:head>
 
 <Hero />
-<!-- <NewsTicker articles={data.articles} /> -->
+{#if data.articles.length > 0}
+  <NewsTicker articles={data.articles} />
+{/if}
 <Mission />
 <Partners partners={data.partners} />
 <GetInvolved />

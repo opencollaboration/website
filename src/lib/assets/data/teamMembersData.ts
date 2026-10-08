@@ -1,4 +1,4 @@
-interface TeamMember {
+export interface TeamMember {
     name: string;
     role: string;
     description: string;
@@ -64,3 +64,7 @@ export const teamMembers: TeamMember[] = [
         hasImage: false
     }
 ];
+
+export function findTeamMember(name: string): TeamMember | undefined {
+    return teamMembers.find((member) => member.name.toLowerCase() === name.toLowerCase());
+}
