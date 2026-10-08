@@ -7,10 +7,10 @@
 
   let { data } = $props();
 
-  const enabledArticles = [];
+  const enabledArticles: any[] = [];
 
   for (const article of data.articles) {
-    if (article.disabled !== "true") enabledArticles.push(article);
+    if (!article.draft) enabledArticles.push(article);
   }
 </script>
 

@@ -45,11 +45,13 @@
               class="block bg-gray-100 dark:bg-slate-800 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 h-full"
             >
               <div class="flex flex-col h-full">
-                <img
-                  src={item.image}
-                  alt={item.title}
-                  class="w-full h-40 object-cover rounded-t-lg"
-                />
+                {#if item.image}
+                  <img
+                    src={item.image}
+                    alt={item.title}
+                    class="w-full h-40 object-cover rounded-t-lg"
+                  />
+                {/if}
                 <div class="p-4 flex flex-col flex-grow">
                   <h3
                     class="font-bold text-lg text-primary-900 dark:text-white mb-2"
