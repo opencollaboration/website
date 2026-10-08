@@ -4,6 +4,7 @@ description: "It's nice to meet people you've only ever seen online!"
 date: "2025-11-09"
 image: "/articleImages/the-hague-canals.jpg"
 slug: "eu-meetup"
+disabled: "true"
 ---
 
 # Geyser and Cloudburst Meetup 2025
