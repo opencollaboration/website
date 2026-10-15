@@ -1,18 +1,31 @@
 ---
 title: "Goodbye RakNet, hello NetherNet"
-description: "Minecraft: Bedrock Edition is replacing RakNet with NetherNet, which changes how clients connect to servers. Here is what that means and what we built for it."
-date: "2026-10-09"
+description: "Minecraft: Bedrock Edition is replacing RakNet with NetherNet, changing how clients connect to servers. Here is what that means and what we built for it."
+date: "2026-10-15"
 author: "Chris"
 slug: "nethernet"
 ---
 
-With Minecraft: Bedrock Edition 26.60, [planned for October 27](https://minecraft.wiki/w/Bedrock_Edition_26.60), Bedrock clients will stop connecting over RakNet. From then on, every Bedrock server has to support NetherNet, the new transport Mojang has been rolling out since 26.40. This affects everyone who runs Bedrock or crossplay servers, from a single self-hosted Geyser instance to large networks and hosting providers.
+With Minecraft: Bedrock Edition 26.60, [planned for October 27](https://minecraft.wiki/w/Bedrock_Edition_26.60), Bedrock 
+clients will stop connecting over RakNet. From then on, every Bedrock server has to support NetherNet, the new transport 
+Mojang has been rolling out since 26.40. This affects everyone who runs Bedrock or crossplay servers, from a single self-hosted Geyser instance to large networks and hosting providers.
 
-At Open Collaboration, the organization behind Geyser, CloudburstMC and Boar, we have been working on NetherNet support since early 2026. The result is an implementation in [CloudburstMC/Network](https://github.com/CloudburstMC/Network), the networking library much of the Java-speaking Bedrock ecosystem uses, and Geyser has supported NetherNet through it since build 1237. This post explains what NetherNet changes, what it means for hosting providers, and what we built to help: NetherNet External Signaling (NXS), an open standard for running signaling outside the game server. Our reference implementation is open source and part of the same library.
+At Open Collaboration, the organization behind [Geyser](https://geysermc.org/), [CloudburstMC](https://cloudburstmc.org/), and [Boar](https://github.com/opencollab-incubator/Boar), 
+we have been working on NetherNet support since early 2026. The result is an implementation in [CloudburstMC/Network](https://github.com/CloudburstMC/Network), 
+the networking library used widely across the Bedrock ecosystem. Geyser has supported NetherNet through it since build 1237. 
+
+This post explains what NetherNet changes and what we built to help: NetherNet External Signaling (NXS), 
+an open standard for running signaling outside the game server. Our reference implementation is open source and part of the same library.
 
 ## What's changing?
 
-Under RakNet, a client sent UDP packets directly to a server's address and port. NetherNet adds a step before that, called signaling. Before joining, the client sends an HTTP(S) request to the server to ask whether it supports NetherNet; the same kind of request also fetches the MOTD and player count shown in the server list. The server answers with the details the client needs to connect. The game connection itself then runs over WebRTC, the open standard browsers use for things like video calls. Mojang documents the signaling side in its [NetherNet HTTP Signaling onboarding guide](https://mojang.github.io/bedrock-protocol-docs/guides/nether-net-onboarding-guide/).
+Under RakNet, a client sent UDP packets directly to a server's address and port. NetherNet adds a step before that, called signaling. 
+Before joining, the client sends an HTTP(S) request to the server to ask whether it supports NetherNet. The server answers with the details the client needs to establish a connection. 
+The game connection itself then runs over WebRTC, an open standard browsers use for things like video calls. 
+
+Similarly, MOTD and player count shown in the server list are fetched using HTTP(S) from a different endpoint.
+
+Mojang documents this in its [NetherNet HTTP Signaling onboarding guide](https://mojang.github.io/bedrock-protocol-docs/guides/nether-net-onboarding-guide/).
 
 <figure class="diagram">
 <svg viewBox="0 0 760 296" role="img" aria-labelledby="nn-title" font-size="13">
@@ -33,15 +46,20 @@ Under RakNet, a client sent UDP packets directly to a server's address and port.
 <figcaption>Joining a server over NetherNet</figcaption>
 </figure>
 
-## Introducing NXS
+## Introducing NetherNet External Signaling (NXS)
 
-Signaling adds complications: servers have to handle HTTPS, and Geyser now needs a TCP port in addition to its UDP port. It also opens up new possibilities. Server-list pings can carry more about the client, such as its version, platform and the full address it used. And because the signaling answer tells the client where to connect, routing players becomes much easier.
+Signaling adds complexity to existing setups. Servers must expose another TCP port for signaling, and they must provide 
+a certificate for TLS. But it also opens up new possibilities: Server-list pings include more details about the client, 
+such as its version, platform and the full address it used. And because the server can directly tell the client where to connect, routing players is now much easier.
 
-This is what NXS is for. We wrote a specification for moving signaling out of the game server: NetherNet External Signaling. With NXS, a game server hands its signaling to a separate service, a provider, chosen by the server's operator. Players still connect directly to the game server. The provider only handles signaling and never carries gameplay traffic.
+To better support these new use cases, we wrote a specification for moving signaling out of the game server: NetherNet External Signaling (NXS). 
+With it, a game server can hand its signaling to a separate service, a "provider," chosen by the server's operator. 
+Players still connect directly to the game server, so the provider only handles signaling and MOTD/player count queries, and never handles gameplay traffic.
 
-The protocol has three parts. When a server starts, it registers with its provider. While it runs, it sends regular heartbeats reporting whether it is accepting players, its capacity, how many players are online, and which public addresses it can be reached on. When a player wants to join, the provider answers their signaling request and issues a short-lived ticket. The player presents that ticket to the game server in their first packet, and the server later reports to the provider whether the join succeeded.
-
-The specification is published under the Apache-2.0 license, with a JSON schema and test fixtures, in [CloudburstMC/Network](https://github.com/CloudburstMC/Network/tree/nethernet/docs/external-signaling). It is still marked experimental and is updated in place. Geyser fully supports it, and [Warden](https://warden.cloud), operated by Ziax, is a public provider and Geyser's default.
+The NXS protocol has three parts. When a server starts, it registers with its provider. While it runs, it sends regular heartbeats 
+reporting whether it is accepting players, its capacity, and which public addresses it can be reached on. 
+When a player wants to join, the provider answers their signaling request and issues a short-lived encrypted ticket. 
+The player presents that ticket to the game server in their first packet, and the server later reports to the provider whether the join succeeded.
 
 <figure class="diagram">
 <svg viewBox="0 0 760 320" role="img" aria-labelledby="nxs-title" font-size="13">
@@ -65,45 +83,50 @@ The specification is published under the Apache-2.0 license, with a JSON schema 
 <figcaption>Joining with NXS: the provider signals, the server admits</figcaption>
 </figure>
 
-With NXS, a game server no longer needs a TCP port or a certificate of its own, only a reachable UDP port.
+With NXS, a game server no longer needs a TCP port or a certificate of its own, only a reachable UDP port. This could also be used
+by game server hosting providers to route users based on a custom domain or subdomain and handle certificate management centrally.
+If you're interested in building your own NXS provider or would like to collaborate with us to build an open implementation,
+feel free to [contact us](/contact/).
 
-## How NXS is designed
+### Technical notes on external NetherNet signaling
 
-A signaling provider sits in front of many servers, so it must not become a new single point of failure or a way to lock operators in. Most of the design follows from that.
+It is worth noting that player joins do not depend on a live connection of the server to the external signaling provider. 
+The server independently checks the encrypted ticket a player receives from the provider to confirm that it is genuine, 
+unexpired, and issued for this connection, before anything is set up for the player. The signaling provider verifies the 
+player's identity during signaling and ties the ticket to it. Tickets automatically expire 120 seconds after they are issued. 
+This means that, even though the game server is exposed to the internet, it can easily drop connections not going through the provider. 
 
-Admission does not depend on a live connection to the provider. The ticket a player receives is encrypted for the target server and travels inside the player's very first packet. The server checks it on its own, confirming that it is genuine, unexpired and issued for this connection, before it sets up anything for the player. Tickets are valid for at most 120 seconds. Because the check happens before any connection state exists, packets without a valid ticket are cheap to drop.
+Further, the game server stays in control even when signaling is done externally. A provider can stop routing new players to a server, 
+but it can never tell the server to drain or shut down. If a provider goes offline, players who are already connected stay connected. 
 
-Tickets are also bound to the player. The provider verifies the player's identity during signaling and ties the ticket to it. Once the player logs in, the game server checks that the login matches. A copied ticket is of no use to anyone else, and the same ticket arriving from a different address is rejected.
+For larger deployments, it is also possible to let the provider route players to a registered server based on the health and capacity reported by each server.
 
-The game server stays in control. A provider can stop routing new players to a server, but it can never tell the server to drain or shut down. If a provider goes offline, players who are already connected stay connected.
+The full V1 specification is published on the [CloudburstMC/Network repository](https://github.com/CloudburstMC/Network/tree/nethernet/docs/external-signaling) under the Apache-2.0 license.
+Geyser fully supports it and uses [Warden](https://warden.cloud), operated by Ziax, as its default configured NXS provider.
 
-For larger deployments, each server can publish several public addresses, such as IPv4, IPv6 and NAT-mapped ones, and the provider routes players based on the health and capacity each server reports.
-
-Finally, NXS is vendor-neutral. Any provider that implements the specification works, and a server can register without creating an account. In Geyser, switching providers is a single config setting. The same goes for the server side: any Bedrock software can implement NXS.
+Finally, the NXS standard is vendor-neutral. Any provider or server software that implements the specification will work interchangeably.
+In Geyser, switching providers is a single config setting.
 
 ## Our implementation
 
-Our NetherNet work lives in CloudburstMC/Network, the networking library many Bedrock projects already depend on, including Geyser and WDPE.
+Our NetherNet work can be found in [CloudburstMC/Network](https://github.com/CloudburstMC/Network/tree/nethernet/).
 
-The library contains the NetherNet transport, built-in HTTP and HTTPS signaling, and both sides of NXS. Under the hood it uses libdatachannel, an open-source WebRTC library, through our [libdatachannel-java](https://github.com/opencollab-incubator/libdatachannel-java) bindings. Beyond that, it:
+The library contains the NetherNet transport, built-in HTTP and HTTPS signaling, and the NXS specification and documentation. 
+It uses [libdatachannel](https://github.com/paullouisageneau/libdatachannel), an open-source WebRTC library, through [libdatachannel-java](https://github.com/opencollab-incubator/libdatachannel-java) bindings. 
+Beyond that, it supports running RakNet alongside NetherNet to make supporting older versions that don't support NetherNet possible.
+It multiplexes WebRTC connections, so all players share one UDP port. This is worth noting, as Google's default WebRTC implementation 
+handles only one connection per IP address and port, which is also why the Bedrock Dedicated Server (BDS) currently needs a separate port per player.
 
-- runs RakNet alongside NetherNet, if desired;
-- integrates with NXS providers;
-- multiplexes WebRTC connections, so all players share one UDP port. Google's default WebRTC implementation handles only one connection per IP address and port, which is also why BDS currently needs a separate port per player;
-- includes signaling, so server software does not need a separate component for it.
+## What this means for Geyser users
 
-## What this means for hosting providers using Geyser
-
-Geyser is widely used, so many of your customers will need working NetherNet support by October 27. The changes needed are covered in the [Geyser blog post](#TODO-link). We also encourage hosts to use NXS together with Geyser's system properties to configure Geyser for their users automatically. If you are considering running your own NXS provider across your instances, or would like to build one with us, we would like to hear from you. NXS is still early, and feedback from hosts at this stage will shape where it goes.
-
-## For the rest of the ecosystem
-
-NetherNet affects more than game servers. Proxies, networks, DDoS protection services and others will need to adapt as well. For routing players at the edge, we encourage them to look at NXS: with a shared, open standard, proxies, providers and servers can work together without a custom integration for every pair.
-
-We also recommend supporting multiplexing. Without it, every player needs their own port. Building on CloudburstMC/Network gets you multiplexing, and fixes and improvements are shared with every other project that uses it.
+Please see the [Geyser blog post](https://geysermc.org/blog/preparing-for-nethernet) for detailed information. Geyser has supported
+NetherNet since build 1237, and will enable NetherNet by default with the 26.60 release. We encourage users to migrate early
+and recommend that server hosts contribute updated configuration instructions to our setup guide.
 
 ## Thank you
 
-We started this work in early 2026, and it would not have been possible without the members of Open Collaboration, who funded it from the start. We also want to thank [Kas-tle](https://github.com/Kas-tle), whose early NetherNet transport in [NetworkCompatible](https://github.com/Kas-tle/NetworkCompatible) and first NetherNet support in CloudburstMC/Network got this started; [rtm516](https://github.com/rtm516), for HTTP signaling and the move to libdatachannel; and [irrld](https://github.com/irrld), for bringing NetherNet and NXS into Geyser and improving the existing work. Thanks as well to CubeCraft Games for their support in developing the specification and for providing a free Warden tier, and to the many developers implementing NetherNet across our projects.
-
-If you have questions, feel free to [contact us](/contact/)!
+Getting support out early, including a new standard, would not have been possible without the members of Open Collaboration, who supported and funded it. 
+We also want to thank [Kas-tle](https://github.com/Kas-tle), whose early NetherNet transport in [NetworkCompatible](https://github.com/Kas-tle/NetworkCompatible) and first NetherNet support in CloudburstMC/Network got this started; 
+[rtm516](https://github.com/rtm516), for HTTP signaling and the move to libdatachannel; and [irrld](https://github.com/irrld), for bringing NetherNet and NXS into Geyser and improving the existing work. 
+Thanks as well to [Ziax](https://ziax.com/) for their support in developing the specification and for providing a free Warden tier, 
+and to the many people helping out users with migrating from RakNet to NetherNet.
