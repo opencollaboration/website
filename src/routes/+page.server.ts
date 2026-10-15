@@ -6,7 +6,9 @@ interface ArticleFrontmatter {
   title: string;
   description: string;
   date: string;
-  image: string;
+  image?: string;
+  author?: string;
+  draft?: boolean;
 }
 export interface Article extends ArticleFrontmatter {
   slug: string;
@@ -45,6 +47,7 @@ export async function load() {
         ...frontmatter,
       };
     })
+    .filter((article) => !article.draft)
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
   const partnersDir = "src/lib/assets/markdown/partners";

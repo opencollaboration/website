@@ -33,31 +33,33 @@
     </h2>
 
     {#key currentPage}
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div class="flex flex-wrap justify-center gap-8">
         {#each paginatedItems as item, i (item.slug)}
           <div
             in:fly={{ y: 20, duration: 300, delay: i * 75 }}
             out:fade={{ duration: 150 }}
-            class="h-full"
+            class="w-full sm:w-[calc(50%-1rem)] lg:w-[calc(25%-1.5rem)]"
           >
             <a
               href={`/articles/${item.slug}`}
-              class="block bg-gray-100 dark:bg-slate-800 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 h-full"
+              class="block bg-gray-200 dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300 h-full"
             >
               <div class="flex flex-col h-full">
-                <img
-                  src={item.image}
-                  alt={item.title}
-                  class="w-full h-40 object-cover rounded-t-lg"
-                />
+                {#if item.image}
+                  <img
+                    src={item.image}
+                    alt={item.title}
+                    class="w-full h-40 object-cover rounded-t-2xl"
+                  />
+                {/if}
                 <div class="p-4 flex flex-col flex-grow">
                   <h3
-                    class="font-bold text-lg text-primary-900 dark:text-white mb-2"
+                    class="font-bold text-lg text-accent dark:text-white mb-2"
                   >
                     {item.title}
                   </h3>
                   <p
-                    class="text-primary-600 dark:text-primary-300 text-sm flex-grow"
+                    class="text-accent dark:text-secondary text-sm flex-grow"
                   >
                     {item.description}
                   </p>
@@ -69,24 +71,26 @@
       </div>
     {/key}
 
-    <div class="flex justify-center items-center gap-4 mt-12">
-      <button
-        onclick={prevPage}
-        disabled={currentPage === 1}
-        class="p-2 rounded-full bg-gray-200 dark:bg-slate-700 text-primary-800 dark:text-white disabled:opacity-50 disabled:cursor-not-allowed hover:bg-gray-300 dark:hover:bg-slate-600 transition-colors"
-        aria-label="Previous Page"
-      >
-        <ChevronLeftIcon class="h-6 w-6" />
-      </button>
+    {#if totalPages > 1}
+      <div class="flex justify-center items-center gap-4 mt-12">
+        <button
+          onclick={prevPage}
+          disabled={currentPage === 1}
+          class="p-2 rounded-full bg-gray-200 dark:bg-slate-700 text-accent dark:text-white disabled:opacity-50 disabled:cursor-not-allowed hover:bg-gray-300 dark:hover:bg-slate-600 transition-colors"
+          aria-label="Previous Page"
+        >
+          <ChevronLeftIcon class="h-6 w-6" />
+        </button>
 
-      <button
-        onclick={nextPage}
-        disabled={currentPage === totalPages}
-        class="p-2 rounded-full bg-gray-200 dark:bg-slate-700 text-primary-800 dark:text-white disabled:opacity-50 disabled:cursor-not-allowed hover:bg-gray-300 dark:hover:bg-slate-600 transition-colors"
-        aria-label="Next Page"
-      >
-        <ChevronRightIcon class="h-6 w-6" />
-      </button>
-    </div>
+        <button
+          onclick={nextPage}
+          disabled={currentPage === totalPages}
+          class="p-2 rounded-full bg-gray-200 dark:bg-slate-700 text-accent dark:text-white disabled:opacity-50 disabled:cursor-not-allowed hover:bg-gray-300 dark:hover:bg-slate-600 transition-colors"
+          aria-label="Next Page"
+        >
+          <ChevronRightIcon class="h-6 w-6" />
+        </button>
+      </div>
+    {/if}
   </div>
 </section>

@@ -4,7 +4,7 @@ description: ""
 date: "2025-07-01"
 image: "/articleImages/df.png"
 slug: "connecting-bedrock"
-disabled: "true"
+draft: "true"
 ---
 
 # Introducing: The Open Collaboration Discord
