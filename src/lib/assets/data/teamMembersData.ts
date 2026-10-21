@@ -2,8 +2,7 @@ export interface TeamMember {
     name: string;
     role: string;
     description: string;
-    image: string;
-    hasImage: boolean;
+    image?: string;
     background?: string;
 }
 
@@ -15,8 +14,7 @@ export const teamMembers: TeamMember[] = [
             "I'm Chris! Currently leading Open Collaboration, maintaining Geyser, and studying. Passionate about OSS " +
             "and coding in Java.",
         image: '/resources/team/chris_profile.jpg',
-        background: '/resources/team/chris_profile_bg.png',
-        hasImage: false
+        background: '/resources/team/chris_profile_bg.png'
     },
     {
         name: 'Zed',
@@ -24,17 +22,22 @@ export const teamMembers: TeamMember[] = [
         description:
             'Ziax provides strategic guidance, funding and operational support to Open Collaboration.',
         image: '/resources/team/zed_profile.png',
-        background: '/resources/team/zed_profile_bg.png',
-        hasImage: false
+        background: '/resources/team/zed_profile_bg.png'
     },
     {
         name: 'Auri',
         role: 'Community & Operations Coordinator',
         description:
-            "I'm Auri! I'm a developer at Geyser, protocol developer at CubeCraft and also help keep Open Collaboration running.",
+            "I'm Auri! I'm a developer at Geyser and also help keep Open Collaboration running.",
         image: '/resources/team/auri_profile.png',
-        background: '/resources/team/auri_profile_bg.png',
-        hasImage: false
+        background: '/resources/team/auri_profile_bg.png'
+    },
+    {
+        name: 'Eclipse',
+        role: 'Developer',
+        description:
+            "I'm Eclipse. My main focus lies on maintaining Geyser, but you'll see me contribute to other projects as well.",
+        image: '/resources/team/eclipse_profile.png'
     },
     {
         name: 'Owen',
@@ -42,8 +45,7 @@ export const teamMembers: TeamMember[] = [
         description:
             'Manages the technical backbone that keeps our projects running.',
         image: '/resources/team/owen_profile.png',
-        background: '/resources/team/profile_bg.png',
-        hasImage: false
+        background: '/resources/team/profile_bg.png'
     },
     {
         name: 'Redned',
@@ -51,8 +53,7 @@ export const teamMembers: TeamMember[] = [
         description:
             '',
         image: '/resources/team/redned_profile.png',
-        background: '/resources/team/redned_profile_bg.png',
-        hasImage: false
+        background: '/resources/team/redned_profile_bg.png'
     },
     {
         name: 'Luke',
@@ -60,8 +61,7 @@ export const teamMembers: TeamMember[] = [
         description:
             '',
         image: '/resources/team/luke_profile.png',
-        background: '/resources/upbg3.png',
-        hasImage: false
+        background: '/resources/upbg3.png'
     }
 ];
 
