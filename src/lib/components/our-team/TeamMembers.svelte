@@ -31,12 +31,15 @@
 					<figure
 						class="font-roboto relative z-10 h-full w-full overflow-hidden rounded-xl bg-white text-left leading-snug shadow-lg transition-transform duration-300 ease-out group-hover/card:translate-x-1 group-hover/card:translate-y-1 dark:bg-gray-900 dark:text-white"
 					>
+						
 						<div class="h-40 w-full overflow-hidden">
+							{#if member.background != null}
 							<img
 								src={member.background}
 								alt="{member.name} background"
 								class="h-full w-full object-cover opacity-85 transition-transform duration-700 group-hover/card:scale-110"
 							/>
+							{/if}
 						</div>
 
 						<figcaption
@@ -46,9 +49,9 @@
                                    before:border-l-[400px] before:border-l-current"
 						>
 							<img
-								src={member.image}
+								src={member.image == null ? "/resources/team/profile.png" : member.image}
 								alt="{member.name}'s profile"
-								class="absolute bottom-full left-6 z-10 h-20 w-20 rounded-full border-4 border-white bg-gray-100 shadow-[0_0_15px_rgba(0,0,0,0.3)] dark:border-gray-900"
+								class="absolute bottom-full left-6 z-10 h-20 w-20 rounded-full border-4 border-white bg-gray-100 dark:bg-gray-800 shadow-[0_0_15px_rgba(0,0,0,0.3)] dark:border-gray-900"
 							/>
 
 							<div class="text-gray-900 dark:text-white">
